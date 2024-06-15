@@ -12,7 +12,7 @@ import {
 function App() {
   return (
     <>
-      <div className="flex gap-4 items-center w-full sticky">
+      <div className="flex gap-4 items-center w-full">
         <div>
           <Avatar src="./assets/potrait.jpg" size="lg" />
         </div>
@@ -70,7 +70,7 @@ function App() {
       </div>
       <br />
       <div className="flex justify-center w-full flex-col">
-        <Tabs className="justify-center" aria-label="Options">
+        <Tabs className="justify-center sticky top-0 z-50" aria-label="Options">
           <Tab key="photos" title="Recent Projects">
             <Card>
               <CardHeader className="flex-col items-start">
