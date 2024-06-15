@@ -80,9 +80,9 @@ function App() {
       <br></br>
       <div>
         I am interested in compilers, operating systems, distributed systems,
-        backend technolgies and much more! I believe in the importance of web,
-        and thus, can do my fair share of web development. These days I tend to
-        spend my free time learning ML and AI.
+        backend technologies and much more! I believe in the importance of the
+        web, and thus, can do my fair share of web development. These days, I
+        tend to spend my free time learning ML and AI.
         <br />
         <br />I am open to internships and work opportunities. You can view and
         download my CV{" "}
@@ -94,6 +94,14 @@ function App() {
           here
         </Link>
         .
+        {/* <br />
+        <br />
+        Over the years, I have compiled a{" "}
+        <Link isExternal showAnchorIcon>
+          list
+        </Link>{" "}
+        of learning resources for various CS, Math & ML topics, which you might
+        find helpful. */}
       </div>
       <br />
       <div className="flex justify-center w-full flex-col">
