@@ -4,11 +4,15 @@ import { nextui } from "@nextui-org/react";
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{html,js}",
+    "./src/**/*.{html,js, ts, jsx, tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Spectral", "system-ui"],
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
