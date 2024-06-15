@@ -12,8 +12,8 @@ import {
 function App() {
   return (
     <>
-      <div className="flex gap-4 items-center w-full">
-        <div className="">
+      <div className="flex gap-4 items-center w-full sticky">
+        <div>
           <Avatar src="./assets/potrait.jpg" size="lg" />
         </div>
         <div>
@@ -161,19 +161,18 @@ function App() {
                 <div>PyGraphia (Python library)</div>
                 <div>
                   <Link
-                    href="https://github.com/amkhrjee/ocwd"
+                    href="https://pypi.org/project/pygraphia/"
                     isExternal
                     showAnchorIcon
                   >
-                    github.com/amkhrjee/ocwd
+                    pypi.org/project/pygraphia
                   </Link>
                 </div>
               </CardHeader>
               <Divider />
               <CardBody>
-                350+ users (pwsh-only metrics; not counting bash installs).
-                Let's you download course materials for MIT courses in bulk at
-                ease. Pure shell scripts.
+                Python library for working with graph data structures. Made
+                while taking Graph Theory course at university.
               </CardBody>
             </Card>
           </Tab>
@@ -188,6 +187,23 @@ function App() {
             </Card>
           </Tab>
         </Tabs>
+      </div>
+      <br />
+      <div>
+        <p className="text-center">Thanks for the visit! ❤️</p>
+        <p
+          className="text-center"
+          style={{
+            fontStyle: "italic",
+          }}
+        >
+          Last updated:{" "}
+          {new Date().toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+        </p>
       </div>
     </>
   );
