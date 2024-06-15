@@ -8,26 +8,50 @@ import {
   Tab,
   Tabs,
 } from "@nextui-org/react";
+import { useState } from "react";
 
 function App() {
+  const [lang, setLang] = useState(0);
   return (
     <>
       <div className="flex gap-4 items-center w-full">
         <div>
           <Avatar src="./assets/potrait.jpg" size="lg" />
         </div>
-        <div>
-          <p
-            style={{
-              fontFamily: "Noto Serif Bengali",
-              fontSize: "1.2rem",
-              fontWeight: "600",
-            }}
-          >
-            {/* Aniruddha Mukherjee */}
-            অনিরুদ্ধ মুখোপাধ্যায়
-            {/* अनिरुद्ध मुखर्जी */}
-          </p>
+        <div onClick={() => setLang((lang + 1) % 3)}>
+          {lang == 0 && (
+            <p
+              style={{
+                fontSize: "1.2rem",
+                fontWeight: "600",
+              }}
+            >
+              Aniruddha Mukherjee
+            </p>
+          )}
+          {lang == 1 && (
+            <p
+              style={{
+                fontFamily: "Noto Serif Bengali",
+                fontSize: "1.2rem",
+                fontWeight: "600",
+              }}
+            >
+              অনিরুদ্ধ মুখোপাধ্যায়
+            </p>
+          )}
+          {lang == 2 && (
+            <p
+              style={{
+                fontFamily: "Tiro Devanagari Hindi",
+                fontSize: "1.2rem",
+                fontWeight: "400",
+              }}
+            >
+              अनिरुद्ध मुखर्जी
+            </p>
+          )}
+
           <p
             style={{
               fontStyle: "italic",
