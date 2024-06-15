@@ -19,11 +19,14 @@ function App() {
         <div>
           <p
             style={{
+              fontFamily: "Noto Serif Bengali",
               fontSize: "1.2rem",
               fontWeight: "600",
             }}
           >
-            Aniruddha Mukherjee
+            {/* Aniruddha Mukherjee */}
+            অনিরুদ্ধ মুখোপাধ্যায়
+            {/* अनिरुद्ध मुखर्जी */}
           </p>
           <p
             style={{
