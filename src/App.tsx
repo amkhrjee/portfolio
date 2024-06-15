@@ -38,7 +38,7 @@ function App() {
             </Link>
             <Link
               isExternal
-              href="https://linkedin.com/in/amkhrjee"
+              href="https://www.linkedin.com/in/amkhrjee/"
               showAnchorIcon
             >
               LinkedIn
@@ -88,7 +88,7 @@ function App() {
               <Divider />
               <CardBody>
                 Tries to estimate BMI from image. MTCNN for face extraction.
-                Simple LR for BMI model (as of now). Made as an university
+                Simple LR for BMI model (as of now). Made as a university
                 project.
               </CardBody>
             </Card>
@@ -108,8 +108,8 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                300+ users. Let's you customize the fonts of any website with
-                locally installed fonts. Cross-browser compatible. Written
+                300+ users. Lets you customize the typography of any website
+                with locally installed fonts. Cross-browser compatible. Written
                 without any frameworks.
               </CardBody>
             </Card>
@@ -131,7 +131,7 @@ function App() {
               <CardBody>
                 Automated the entire pipeline of ordering and 3D printing of
                 prosthetic hands. Made Windows native client for admins to
-                manage orders. Made as university project.
+                manage orders. Made as a university project.
               </CardBody>
             </Card>
             <br />
@@ -150,9 +150,9 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                350+ users (pwsh-only metrics; not counting bash installs).
-                Let's you download course materials for MIT courses in bulk at
-                ease. Pure shell scripts.
+                350+ users (pwsh-only metrics; not counting bash installs). Lets
+                you download course materials for MIT courses in bulk at ease.
+                Pure shell scripts.
               </CardBody>
             </Card>
             <br />
@@ -178,12 +178,7 @@ function App() {
           </Tab>
           <Tab key="music" title="Latest Blog Posts">
             <Card>
-              <CardBody>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-              </CardBody>
+              <CardBody>Will be updated soon...</CardBody>
             </Card>
           </Tab>
         </Tabs>
