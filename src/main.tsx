@@ -7,7 +7,15 @@ import { NextUIProvider } from "@nextui-org/react";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <NextUIProvider>
     <React.StrictMode>
-      <App />
+      <main
+        className={
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark text-foreground bg-background"
+            : ""
+        }
+      >
+        <App />
+      </main>
     </React.StrictMode>
   </NextUIProvider>
 );

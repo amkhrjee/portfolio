@@ -18,3 +18,9 @@ body {
         padding: 16px 24rem 16px 24rem;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
+}
