@@ -8,10 +8,25 @@ import {
   Tab,
   Tabs,
 } from "@nextui-org/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [lang, setLang] = useState(0);
+  const [commitDate, setCommitDate] = useState("...");
+  useEffect(() => {
+    fetch("https://api.github.com/repos/amkhrjee/portfolio/commits?per_page=1")
+      .then((res) => res.json())
+      .then((commits) => {
+        const lastCommitDate = commits[0].commit.author.date;
+        const formattedDate = new Date(lastCommitDate).toLocaleString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+        setCommitDate(formattedDate);
+      })
+      .catch((error) => console.error(error));
+  });
   return (
     <>
       <div className="flex gap-4 items-center w-full">
@@ -79,12 +94,19 @@ function App() {
       </div>
       <br></br>
       <div>
-        I am interested in compilers, operating systems, distributed systems,
-        backend technologies and much more! I believe in the importance of the
-        web, and thus, can do my fair share of web development. These days, I
-        tend to spend my free time learning ML and AI.
+        Hi. I am a final year computer science undergrad.
         <br />
-        <br />I am open to internships and work opportunities. You can view and
+        I am interested in compilers, operating systems, databases, distributed
+        systems, backend technologies and much more!
+        <br />
+        <br />
+        You can check out my{" "}
+        <Link isExternal showAnchorIcon href="https://resources.amkhrjee.xyz">
+          collection
+        </Link>{" "}
+        of helpful resources for learning various CS, Math & ML topics.
+        <br />
+        <br />I am open to internship and work opportunities. You can view and
         download my CV{" "}
         <Link
           isExternal
@@ -227,12 +249,7 @@ function App() {
             fontStyle: "italic",
           }}
         >
-          Last updated:{" "}
-          {new Date().toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
+          Last updated: {commitDate}
         </p>
       </div>
     </>
