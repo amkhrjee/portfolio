@@ -96,8 +96,9 @@ function App() {
       <div>
         Hi. I am a final year computer science undergrad.
         <br />
+        <br />
         I am interested in compilers, operating systems, databases, distributed
-        systems, backend technologies and much more!
+        systems and much more!
         <br />
         <br />
         You can check out my{" "}
@@ -116,14 +117,6 @@ function App() {
           here
         </Link>
         .
-        {/* <br />
-        <br />
-        Over the years, I have compiled a{" "}
-        <Link isExternal showAnchorIcon>
-          list
-        </Link>{" "}
-        of learning resources for various CS, Math & ML topics, which you might
-        find helpful. */}
       </div>
       <br />
       <div className="flex justify-center w-full flex-col">
