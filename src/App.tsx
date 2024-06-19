@@ -94,11 +94,9 @@ function App() {
       </div>
       <br></br>
       <div>
-        Hi. I am a final year computer science undergrad.
-        <br />
-        <br />
-        I am interested in compilers, operating systems, databases, distributed
-        systems and much more!
+        Hi. I am a final year computer science undergrad. I am passionate about
+        compilers, operating systems, databases, distributed systems and much
+        more!
         <br />
         <br />
         You can check out my{" "}
