@@ -80,7 +80,7 @@ function App() {
             </Link>
             <Link
               isExternal
-              href="https://www.linkedin.com/in/amkhrjee/"
+              href="https://www.linkedin.com/in/amkhrjee"
               showAnchorIcon
             >
               LinkedIn
