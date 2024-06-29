@@ -156,7 +156,7 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                300+ users. Lets you customize the typography of any website
+                350+ users. Lets you customize the typography of any website
                 with locally installed fonts. Cross-browser compatible. Written
                 without any frameworks.
               </CardBody>
@@ -221,6 +221,26 @@ function App() {
               <CardBody>
                 Python library for working with graph data structures. Made
                 while taking Graph Theory course at university.
+              </CardBody>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader className="flex-col items-start">
+                <div>GH Lines Browser Extension</div>
+                <div>
+                  <Link
+                    href="https://ghlines.amkhrjee.xyz"
+                    isExternal
+                    showAnchorIcon
+                  >
+                    ghlines.amkhrjee.xyz
+                  </Link>
+                </div>
+              </CardHeader>
+              <Divider />
+              <CardBody>
+                A chrome extension that shows line counts of files in the GitHub
+                source tree.
               </CardBody>
             </Card>
           </Tab>
