@@ -5,7 +5,6 @@ import {
   CardHeader,
   Divider,
   Link,
-  Spacer,
   Tab,
   Tabs,
 } from "@nextui-org/react";
