@@ -117,13 +117,13 @@ function App() {
         of helpful resources for learning various CS, Math & ML topics.
         <br />
         <br />I am open to internship and work opportunities. You can view and
-        download my CV{" "}
+        download my{" "}
         <Link
           isExternal
           showAnchorIcon
           href="https://drive.google.com/file/d/1jSa0t8sg1ANROsAfSHTisdto7MgH64BZ/view?usp=sharing"
         >
-          here
+          CV
         </Link>
         .
       </div>
