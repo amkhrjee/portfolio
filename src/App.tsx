@@ -105,9 +105,9 @@ function App() {
       </div>
       <br></br>
       <div>
-        Hi. I am a final year computer science undergrad. I am passionate about
-        compilers, operating systems, databases, distributed systems and much
-        more!
+        Hi. I'm a final year computer science undergrad. I like to talk about
+        cloud, compilers, operating systems, databases, distributed systems and
+        much more!
         <br />
         <br />
         You can check out my{" "}
@@ -116,8 +116,8 @@ function App() {
         </Link>{" "}
         of helpful resources for learning various CS, Math & ML topics.
         <br />
-        <br />I am open to internship and work opportunities. You can view and
-        download my{" "}
+        <br />
+        I'm available via email. You can view and download my{" "}
         <Link
           isExternal
           showAnchorIcon
@@ -167,7 +167,7 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                350+ users. Lets you customize the typography of any website
+                500+ users. Lets you customize the typography of any website
                 with locally installed fonts. Cross-browser compatible. Written
                 without any frameworks.
               </CardBody>
@@ -178,7 +178,7 @@ function App() {
                 <div>Automation of 3D printing process</div>
                 <div>
                   <Link
-                    href="https://proshandstore.amkhrjee.xyz"
+                    href="https://proshandstore.vercel.app"
                     isExternal
                     showAnchorIcon
                   >
@@ -209,7 +209,7 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                350+ users (pwsh-only metrics; not counting bash installs). Lets
+                400+ users (pwsh-only metrics; not counting bash installs). Lets
                 you download course materials for MIT courses in bulk at ease.
                 Pure shell scripts.
               </CardBody>

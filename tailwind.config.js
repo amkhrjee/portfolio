@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Spectral", "system-ui"],
+        sans: ["IBM Plex Serif", "serif", "system-ui"],
       },
     },
   },
