@@ -117,7 +117,8 @@ function App() {
         of helpful resources for learning various CS, Math & ML topics.
         <br />
         <br />
-        I'm available via email. You can view and download my{" "}
+        I'm available via <Link href="mailto:amkhrjee@gmail.com">email</Link>.
+        You can view and download my{" "}
         <Link
           isExternal
           showAnchorIcon
