@@ -124,7 +124,7 @@ function App() {
           showAnchorIcon
           href="https://drive.google.com/file/d/1jSa0t8sg1ANROsAfSHTisdto7MgH64BZ/view?usp=sharing"
         >
-          CV
+          resumé
         </Link>
         .
       </div>
