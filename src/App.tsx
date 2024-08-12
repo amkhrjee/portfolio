@@ -122,7 +122,7 @@ function App() {
         <Link
           isExternal
           showAnchorIcon
-          href="https://drive.google.com/file/d/1jSa0t8sg1ANROsAfSHTisdto7MgH64BZ/view?usp=sharing"
+          href="https://drive.google.com/file/d/1DphaJkAcQtxL1-jUV8hp-iOuByzs8bAy/view?usp=sharing"
         >
           resumé
         </Link>
