@@ -11,14 +11,14 @@ import {
 import { useEffect, useState } from "react";
 
 function App() {
-  interface Post {
-    title: string;
-    summary: string;
-    slug: string;
-  }
+  // interface Post {
+  //   title: string;
+  //   summary: string;
+  //   slug: string;
+  // }
   const [lang, setLang] = useState(0);
   const [commitDate, setCommitDate] = useState("...");
-  const [posts, setPosts] = useState<Post[]>([]);
+  // const [posts, setPosts] = useState<Post[]>([]);
   useEffect(() => {
     fetch("https://api.github.com/repos/amkhrjee/portfolio/commits?per_page=1")
       .then((res) => res.json())
@@ -33,18 +33,18 @@ function App() {
       })
       .catch((error) => console.error(error));
 
-    fetch("https://blog.amkhrjee.xyz:4000/latest/json")
-      .then((res) => res.json())
-      .then((rows) => setPosts(rows))
-      .catch((error) => console.error(error));
+    // fetch("https://blog.amkhrjee.xyz:4000/latest/json")
+    //   .then((res) => res.json())
+    //   .then((rows) => setPosts(rows))
+    //   .catch((error) => console.error(error));
   });
   return (
     <>
       <div className="flex gap-4 items-center w-full">
         <div>
-          <Avatar src="./assets/potrait.jpg" size="lg" />
+          <Avatar src="./assets/potrait.jpg" radius="md" isBordered size="lg" />
         </div>
-        <div onClick={() => setLang((lang + 1) % 3)}>
+        <div className="cursor-pointer" onClick={() => setLang((lang + 1) % 3)}>
           {lang == 0 && (
             <p
               style={{
@@ -83,7 +83,7 @@ function App() {
               fontStyle: "italic",
             }}
           >
-            Software Engineer • CS Undergrad
+            Computer Science Undergrad
           </p>
           <div className="flex gap-4">
             <Link isExternal href="https://github.com/amkhrjee" showAnchorIcon>
@@ -129,27 +129,30 @@ function App() {
         .
       </div>
       <br />
+
       <div className="flex justify-center w-full flex-col">
         <Tabs className="justify-center sticky top-0 z-50" aria-label="Options">
           <Tab key="photos" title="Recent Projects">
             <Card>
               <CardHeader className="flex-col items-start">
-                <div>BMI Estimation from Images</div>
+                <div>
+                  <code>wp</code>: Wikipedia Parser
+                </div>
                 <div>
                   <Link
-                    href="https://bmiweb.amkhrjee.xyz"
+                    href="https://github.com/amkhrjee/wp"
                     isExternal
                     showAnchorIcon
                   >
-                    bmiweb.amkhrjee.xyz
+                    github.com/amkhrjee/wp
                   </Link>
                 </div>
               </CardHeader>
               <Divider />
               <CardBody>
-                Tries to estimate BMI from image. MTCNN for face extraction.
-                Simple LR for BMI model (as of now). Made as a university
-                project.
+                Scrape and download wikipedia as plaintext for training your
+                language models. 14 Indian languages supported including
+                Sanskrit and Pali.
               </CardBody>
             </Card>
             <br />
@@ -168,9 +171,51 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                500+ users. Lets you customize the typography of any website
+                900+ users. Lets you customize the typography of any website
                 with locally installed fonts. Cross-browser compatible. Written
                 without any frameworks.
+              </CardBody>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader className="flex-col items-start">
+                <div>MIT OpenCourseWare Downloader (ocwd)</div>
+                <div>
+                  <Link
+                    href="https://github.com/amkhrjee/ocwd"
+                    isExternal
+                    showAnchorIcon
+                  >
+                    github.com/amkhrjee/ocwd
+                  </Link>
+                </div>
+              </CardHeader>
+              <Divider />
+              <CardBody>
+                500+ users (pwsh-only metrics; Unix/Linux installs are
+                untracked). Lets you download course materials for MIT courses
+                in bulk at ease. Pure shell scripts.
+              </CardBody>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader className="flex-col items-start">
+                <div>BMI Estimation from Images</div>
+                <div>
+                  <Link
+                    href="https://bmiweb.amkhrjee.xyz"
+                    isExternal
+                    showAnchorIcon
+                  >
+                    bmiweb.amkhrjee.xyz
+                  </Link>
+                </div>
+              </CardHeader>
+              <Divider />
+              <CardBody>
+                Tries to estimate BMI from image. MTCNN for face extraction.
+                Simple LR for BMI model (as of now). Made as a university
+                project.
               </CardBody>
             </Card>
             <br />
@@ -195,27 +240,7 @@ function App() {
               </CardBody>
             </Card>
             <br />
-            <Card>
-              <CardHeader className="flex-col items-start">
-                <div>MIT OpenCourseWare Downloader (CLI)</div>
-                <div>
-                  <Link
-                    href="https://github.com/amkhrjee/ocwd"
-                    isExternal
-                    showAnchorIcon
-                  >
-                    github.com/amkhrjee/ocwd
-                  </Link>
-                </div>
-              </CardHeader>
-              <Divider />
-              <CardBody>
-                400+ users (pwsh-only metrics; not counting bash installs). Lets
-                you download course materials for MIT courses in bulk at ease.
-                Pure shell scripts.
-              </CardBody>
-            </Card>
-            <br />
+
             <Card>
               <CardHeader className="flex-col items-start">
                 <div>PyGraphia (Python library)</div>
@@ -257,32 +282,45 @@ function App() {
             </Card>
           </Tab>
           <Tab key="music" title="Latest Blog Posts">
-            {posts.map((post, index) => (
-              <>
-                <Card key={index}>
-                  <CardHeader className="flex-col items-start">
-                    <div>{post.title}</div>
-                    <div>
-                      <Link
-                        href={`https://blog.amkhrjee.xyz/posts/${post.slug}`}
-                        isExternal
-                        showAnchorIcon
-                      >
-                        /{post.slug}
-                      </Link>
-                    </div>
-                  </CardHeader>
-                  <Divider />
-                  <CardBody>{post.summary}</CardBody>
-                </Card>
-                <br />
-              </>
-            ))}
-            <div>
-              <p className="text-center">
-                Summaries generated by Gemini 1.5 Flash ✨
-              </p>
-            </div>
+            <Card>
+              <CardHeader className="flex-col items-start">
+                <div>But what's database pooling?</div>
+                <div>
+                  <Link
+                    href={`https://blog.amkhrjee.xyz/posts/database-pooling/`}
+                    isExternal
+                    showAnchorIcon
+                  >
+                    blog.amkhrjee.xyz/posts/database-pooling
+                  </Link>
+                </div>
+              </CardHeader>
+              <Divider />
+              <CardBody>
+                Talks about the concept of connection pooling in the context of
+                databases.
+              </CardBody>
+            </Card>
+            <br />
+            <Card>
+              <CardHeader className="flex-col items-start">
+                <div>Docker Bind Mounts & Volumes</div>
+                <div>
+                  <Link
+                    href={`https://blog.amkhrjee.xyz/posts/docker-bind-mounts-volumes/`}
+                    isExternal
+                    showAnchorIcon
+                  >
+                    blog.amkhrjee.xyz/posts/docker-bind-mounts-volumes
+                  </Link>
+                </div>
+              </CardHeader>
+              <Divider />
+              <CardBody>
+                Discusses the differences between Docker bind mounts and Docker
+                volumes. Also goes into details about when each is useful.
+              </CardBody>
+            </Card>
           </Tab>
         </Tabs>
       </div>

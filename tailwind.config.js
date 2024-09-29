@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["IBM Plex Serif", "serif", "system-ui"],
+        sans: ["JetBrains Mono", "serif", "system-ui"],
       },
     },
   },
