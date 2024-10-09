@@ -16,7 +16,6 @@ function App() {
   //   summary: string;
   //   slug: string;
   // }
-  const [lang, setLang] = useState(0);
   const [commitDate, setCommitDate] = useState("...");
   // const [posts, setPosts] = useState<Post[]>([]);
   useEffect(() => {
@@ -44,39 +43,15 @@ function App() {
         <div>
           <Avatar src="./assets/potrait.jpg" radius="md" isBordered size="lg" />
         </div>
-        <div className="cursor-pointer" onClick={() => setLang((lang + 1) % 3)}>
-          {lang == 0 && (
-            <p
-              style={{
-                fontSize: "1.2rem",
-                fontWeight: "600",
-              }}
-            >
-              Aniruddha Mukherjee
-            </p>
-          )}
-          {lang == 1 && (
-            <p
-              style={{
-                fontFamily: "Noto Serif Bengali",
-                fontSize: "1.2rem",
-                fontWeight: "600",
-              }}
-            >
-              অনিরুদ্ধ মুখোপাধ্যায়
-            </p>
-          )}
-          {lang == 2 && (
-            <p
-              style={{
-                fontFamily: "Tiro Devanagari Hindi",
-                fontSize: "1.2rem",
-                fontWeight: "400",
-              }}
-            >
-              अनिरुद्ध मुखर्जी
-            </p>
-          )}
+        <div className="cursor-pointer">
+          <p
+            style={{
+              fontSize: "1.2rem",
+              fontWeight: "600",
+            }}
+          >
+            Aniruddha Mukherjee
+          </p>
 
           <p
             style={{
@@ -105,28 +80,30 @@ function App() {
       </div>
       <br></br>
       <div>
-        Hi. I'm a final year computer science undergrad. I like to talk about
-        cloud, compilers, operating systems, databases, distributed systems and
-        much more!
+        <p>
+          Hi. I love building stuff. I'm interested in compilers, databases,
+          operating systems & everything in-between!
+        </p>
         <br />
+        <p>
+          You can check out my{" "}
+          <Link isExternal showAnchorIcon href="https://resources.amkhrjee.xyz">
+            collection
+          </Link>{" "}
+          of helpful resources for learning various CS, Math & ML topics.
+        </p>
         <br />
-        You can check out my{" "}
-        <Link isExternal showAnchorIcon href="https://resources.amkhrjee.xyz">
-          collection
-        </Link>{" "}
-        of helpful resources for learning various CS, Math & ML topics.
-        <br />
-        <br />
-        I'm available via <Link href="mailto:amkhrjee@gmail.com">email</Link>.
-        You can view and download my{" "}
-        <Link
-          isExternal
-          showAnchorIcon
-          href="https://drive.google.com/file/d/1DphaJkAcQtxL1-jUV8hp-iOuByzs8bAy/view?usp=sharing"
-        >
-          resumé
-        </Link>
-        .
+        <p>
+          I'm available via <Link href="mailto:amkhrjee@gmail.com">email</Link>.
+          You can view and download my{" "}
+          <Link
+            isExternal
+            showAnchorIcon
+            href="https://drive.google.com/file/d/1DphaJkAcQtxL1-jUV8hp-iOuByzs8bAy/view?usp=sharing"
+          >
+            resumé
+          </Link>
+        </p>
       </div>
       <br />
 
@@ -135,9 +112,7 @@ function App() {
           <Tab key="photos" title="Recent Projects">
             <Card>
               <CardHeader className="flex-col items-start">
-                <div>
-                  <code>wp</code>: Wikipedia Parser
-                </div>
+                <div>wp: wikipedia parser</div>
                 <div>
                   <Link
                     href="https://github.com/amkhrjee/wp"
@@ -171,7 +146,7 @@ function App() {
               </CardHeader>
               <Divider />
               <CardBody>
-                900+ users. Lets you customize the typography of any website
+                1000+ users. Lets you customize the typography of any website
                 with locally installed fonts. Cross-browser compatible. Written
                 without any frameworks.
               </CardBody>
@@ -200,22 +175,27 @@ function App() {
             <br />
             <Card>
               <CardHeader className="flex-col items-start">
-                <div>BMI Estimation from Images</div>
+                <div>Pathfinder</div>
                 <div>
                   <Link
-                    href="https://bmiweb.amkhrjee.xyz"
+                    href="https://github.com/amkhrjee/pathfinder"
                     isExternal
                     showAnchorIcon
                   >
-                    bmiweb.amkhrjee.xyz
+                    github.com/amkhrjee/pathfinder/
                   </Link>
                 </div>
               </CardHeader>
               <Divider />
               <CardBody>
-                Tries to estimate BMI from image. MTCNN for face extraction.
-                Simple LR for BMI model (as of now). Made as a university
-                project.
+                Cool visualisation for various search algorithms in AI. Got
+                semi-viral on reddit.{" "}
+                <Link
+                  underline="hover"
+                  href="https://www.reddit.com/r/computerscience/comments/1fw9q09/made_an_app_to_visualise_different_search/"
+                >
+                  View the reddit post
+                </Link>
               </CardBody>
             </Card>
             <br />
@@ -291,7 +271,7 @@ function App() {
                     isExternal
                     showAnchorIcon
                   >
-                    blog.amkhrjee.xyz/posts/database-pooling
+                    /posts/database-pooling
                   </Link>
                 </div>
               </CardHeader>
@@ -311,7 +291,7 @@ function App() {
                     isExternal
                     showAnchorIcon
                   >
-                    blog.amkhrjee.xyz/posts/docker-bind-mounts-volumes
+                    /posts/docker-bind-mounts-volumes
                   </Link>
                 </div>
               </CardHeader>

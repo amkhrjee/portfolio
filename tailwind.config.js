@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["JetBrains Mono", "serif", "system-ui"],
+        sans: ["Taviraj", "sans-serif", "system-ui"],
       },
     },
   },
