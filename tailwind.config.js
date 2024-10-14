@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./*.html"],
   daisyui: {
-    themes: ["emerald", "dark"],
+    themes: ["autumn"],
+  },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: "Courier Prime",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

@@ -19,19 +19,27 @@
     <meta property="og:image:alt" content="Software Engineer - CS Undergrad" />
     <script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="2471c6fc-54eb-449d-bf40-814496412f30"
         async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="md:w-1/2 mx-auto">
+    <div class="md:w-3/4 lg:w-1/2 mx-auto">
         <div class="flex items-center gap-4 p-4">
             <div class="avatar">
-                <div class="mask mask-squircle w-24">
+                <div class="mask mask-decagon w-24">
                     <img src="./assets/potrait.jpg" />
                 </div>
             </div>
             <div>
-                <div class="text-2xl font-bold">Aniruddha Mukherjee</div>
-                <div class="italic">Computer Science Undergrad</div>
+                <div class="text-2xl font-bold hidden md:block">Aniruddha Mukherjee
+                </div>
+                <div class="text-2xl font-bold md:hidden">Aniruddha M.
+                </div>
+                <div class="italic hidden md:block">Computer Science Undergrad</div>
+                <div class="italic md:hidden">CompSci Undergrad</div>
                 <div class="flex justify-start gap-4">
                     <a class="link link-primary" href="https://github.com/amkhrjee">GitHub</a>
                     <a class="link link-primary" href="https://www.linkedin.com/in/amkhrjee/">LinkedIn</a>
@@ -39,17 +47,19 @@
                 </div>
             </div>
         </div>
-        <div class="prose text-justify p-4">
+        <div class="text-justify p-4">
             <p>I love building stuff. I'm interested in compilers, databases, {operating, distributed}
                 systems &
                 everything related!
             </p>
+            <br>
             <p>
                 You can check out my <a class="link link-secondary"
                     href="https://resources.amkhrjee.xyz/">collection</a> of
                 helpful resources for learning various
                 CS, Math & ML topics.
             </p>
+            <br>
             <p>
                 I'm available via <a class="link link-secondary" href="mailto:amkhrjee@gmail.com">email</a>. You can
                 view
@@ -172,7 +182,7 @@
                         <h2 class="card-title"><a class="link link-accent"
                                 href="https://github.com/bytecalcweb">ByteCalcWeb
                             </a></h2>
-                        <p class="text-justify">A full-fledged calculator aimed towards CS students. Hand-written
+                        <p class="text-justify">A full-fledged calculator aimed towards CS students. Based on my
                             tree-walk interpreter written in TypeScript.
                         </p>
                     </div>
