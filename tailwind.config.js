@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: "Courier Prime",
+        mono: "JetBrains Mono",
       },
     },
   },

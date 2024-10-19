@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/potrait-round.png" />
+    <title>Aniruddha Mukherjee</title>
+    <link rel="stylesheet" href="../styles.css">
+    <meta type="description" content="Personal site of Aniruddha Mukherjee (@amkhrjee).">
+    <meta property="og:url" content="https://amkhrjee.xyz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aniruddha Mukherjee" />
+    <meta property="og:description" content="Hi, this is my personal site!" />
+    <meta property="og:image" content="https://i.imgur.com/shYHQoN.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Software Engineer - CS Undergrad" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/dockerfile.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <div class="md:w-3/4 lg:w-1/2 mx-auto" style="font-family: Inter, sans-serif;">
+        <div class="p-4 flex justify-between items-center">
+            <a class="font-bold text-2xl text-primary link-hover" href="/blog/index.html"
+                style="font-family: Fraunces;">Aniruddha's Blog</a>
+            <a class="font-bold link link-accent" href="/" style="font-family: Fraunces;">amkhrjee.xyz</a>
+        </div>
+        <h1 class="p-4 text-secondary font-bold" style="font-family: Fraunces; font-size: 2rem;">Docker Bind Mounts &
+            Volumes
+        </h1>
+        <p class="p-4" style="font-family: Fraunces;">12 Jul, 2024</p>
+        <div class="p-4 prose-sm md:prose-lg">
+            <p>Containers need to share state between runs more often than not. You may also want to share
+                configurations or other
+                source files from your host machine to your running Docker container to “hot-reload” changes as you
+                modify your
+                local files.
+            </p>
+            <p>
+                Bind Mounts help you share files or directories from the host machine to the running Docker container.
+                Reading and
+                writing is bidirectional, i.e., you can read/write from both the running container and your host
+                machine.</p>
+            <p>To use bind mounts, you simply specify your files or directories when you first run your container.</p>
+            <pre><code class="language-bash">docker run --mount type=bind,source=/path/to/source,target=/path/to/target/in/container image_name</code></pre>
+            <p>
+
+                A possible scenario where this might be helpful is when running a web server like NGINX or Caddy
+                container. You
+                mount the html and config files to your container and modify them to see the changes get reflected in
+                the running container.
+            </p>
+            <p>Learn more here: <a class="link link-neutral"
+                    href="https://docs.docker.com/storage/bind-mounts/">https://docs.docker.com/storage/bind-mounts/</a>
+            </p>
+            <p>Volumes
+                Volumes help you maintain state between runs of your container. Volumes can also be shared between
+                different
+                container types. While bind mounts are managed by you host machine's file system, volumes are managed by
+                Docker.
+                Thus, you can create and delete volumes independent of your containers.</p>
+            <p>You can create a volume with the following commands:</p>
+            <pre><code class="language-bash">docker volume create newvol</code></pre>
+            <p>
+                You attach this volume in CLI with this:
+            </p>
+            <pre><code class="language-bash">docker run --mount source=newvol,target=/path/to/target/in/container image_name</code></pre>
+            <p>or you can specify in your Dockerfile for creating an image mounted to a volume</p>
+            <pre><code class="language-dockerfile">FROM some_base_image
+...
+VOLUME newvol
+...</code></pre>
+            <p>
+                A possible useful scenario for Volumes are for gathering logging data from different running containers.
+            </p>
+            <p>Learn more about volumes here: <a class="link link-neutral"
+                    href="https://docs.docker.com/storage/volumes/">https://docs.docker.com/storage/volumes/</a></p>
+
+        </div>
+    </div>
+</body>
+
+</html>
