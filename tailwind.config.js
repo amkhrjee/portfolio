@@ -2,13 +2,12 @@
 module.exports = {
   content: ["./*.html"],
   daisyui: {
-    themes: ["autumn"],
+    themes: ["synthwave"],
   },
   theme: {
     extend: {
       fontFamily: {
-        sans: "Courier Prime",
-        mono: "JetBrains Mono",
+        sans: "Fira Code",
       },
     },
   },
