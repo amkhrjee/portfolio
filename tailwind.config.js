@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./*.html"],
   daisyui: {
-    themes: ["synthwave"],
+    themes: ["dim"],
   },
   theme: {
     extend: {
