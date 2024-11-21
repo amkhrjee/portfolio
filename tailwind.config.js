@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: "Fira Code",
+        sans: "Inter",
       },
     },
   },
