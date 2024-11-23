@@ -2386,18 +2386,6 @@ input.tab:checked + .tab-content,
   gap: 1rem;
 }
 
-.text-clip {
-  text-overflow: clip;
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
-
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
@@ -2413,10 +2401,6 @@ input.tab:checked + .tab-content,
 
 .text-justify {
   text-align: justify;
-}
-
-.text-start {
-  text-align: start;
 }
 
 .text-2xl {
