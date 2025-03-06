@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@heroui/button";
 import {
   Navbar as HeroUINavbar,
@@ -5,12 +6,14 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@heroui/navbar";
-import { LuLanguages, LuMoon } from "react-icons/lu";
+import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
 import Link from "next/link";
 
 import { BanglaSans } from "@/config/fonts";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   return (
     <HeroUINavbar>
       <NavbarBrand>
@@ -29,8 +32,15 @@ export const Navbar = () => {
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button isIconOnly aria-label="Theme Change" variant="ghost">
-            <LuMoon />
+          <Button
+            onPress={() =>
+              theme == "light" ? setTheme("dark") : setTheme("light")
+            }
+            isIconOnly
+            aria-label="Theme Change"
+            variant="ghost"
+          >
+            {theme == "light" ? <LuMoon /> : <LuSunMedium />}
           </Button>
         </NavbarItem>
       </NavbarContent>

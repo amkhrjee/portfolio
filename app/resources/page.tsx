@@ -7,7 +7,7 @@ export default function Page() {
   const markdown = readFileSync(path, { encoding: "utf8" });
 
   return (
-    <div className="p-4 prose">
+    <div className="p-4 prose text-foreground prose-h2:text-foreground prose-h3:text-foreground prose-a:text-primary">
       <Markdown>{markdown}</Markdown>
     </div>
   );
