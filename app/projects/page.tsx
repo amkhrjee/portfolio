@@ -63,6 +63,7 @@ export default function Page() {
           </DropdownMenu>
         </Dropdown>
       </div>
+
       <div className="p-4 flex flex-col gap-4">
         {sortby.has("latest") &&
           projects
