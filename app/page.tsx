@@ -165,7 +165,9 @@ export default function Home() {
           <div className="flex flex-row gap-2 justify-start">
             <HeroTooltip content="Linkedin">
               <Button
-                onPress={() => redirect("https://linkedin.com/amkhrjee")}
+                onPress={() =>
+                  redirect("https://www.linkedin.com/in/amkhrjee/")
+                }
                 isIconOnly
                 size="lg"
                 variant="bordered"
