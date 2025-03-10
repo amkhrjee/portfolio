@@ -2,8 +2,17 @@
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
-import { Tooltip } from "@heroui/tooltip";
+import { Tooltip as HeroTooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
+
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from "@heroui/modal";
 
 import {
   LuClipboardList,
@@ -17,11 +26,65 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
-import { LuChartNoAxesCombined } from "react-icons/lu";
+import { MdQueryStats } from "react-icons/md";
+
 import { FaGoodreadsG } from "react-icons/fa";
 import { fontMono } from "@/config/fonts";
+import { ChartConfig, ChartContainer } from "@/components/ui/chart";
+import {
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  LabelList,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 export default function Home() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const chartData = [
+    { month: "January", desktop: 186, mobile: 80 },
+    { month: "February", desktop: 305, mobile: 200 },
+    { month: "March", desktop: 237, mobile: 120 },
+    { month: "April", desktop: 73, mobile: 190 },
+    { month: "May", desktop: 209, mobile: 130 },
+    { month: "June", desktop: 214, mobile: 140 },
+  ];
+  const countryData = [
+    {
+      country: "🇮🇳 India",
+      views: 150,
+    },
+    {
+      country: "🇺🇸 USA",
+      views: 180,
+    },
+    {
+      country: "🇧🇷 Brazil",
+      views: 150,
+    },
+    {
+      country: "🇩🇪 Germany",
+      views: 130,
+    },
+    {
+      country: "🇯🇵 Japan",
+      views: 100,
+    },
+  ];
+
+  const chartConfig = {
+    desktop: {
+      label: "Desktop",
+      color: "#2563eb",
+    },
+    mobile: {
+      label: "Mobile",
+      color: "#60a5fa",
+    },
+  } satisfies ChartConfig;
+
   return (
     <>
       <div className="p-4 flex flex-row gap-4 items-center">
@@ -34,6 +97,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, translateY: 40 }}
           animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: 0.15 }}
         >
           <p>Hi,👋🏻</p>
           <p className="text-3xl">I&apos;m Aniruddha.</p>
@@ -42,6 +106,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, translateY: -40 }}
         animate={{ opacity: 1, translateY: 0 }}
+        transition={{ delay: 0.3 }}
         className="p-4"
       >
         <p>
@@ -85,26 +150,26 @@ export default function Home() {
           <p>Connect with me</p>
           <br />
           <div className="flex flex-row gap-2 justify-start">
-            <Tooltip content="Linkedin">
+            <HeroTooltip content="Linkedin">
               <Button isIconOnly size="lg" variant="bordered">
                 <FaLinkedinIn />
               </Button>
-            </Tooltip>
-            <Tooltip content="GitHub">
+            </HeroTooltip>
+            <HeroTooltip content="GitHub">
               <Button isIconOnly size="lg" variant="bordered">
                 <LuGithub />
               </Button>
-            </Tooltip>
-            <Tooltip content="X/Twitter">
+            </HeroTooltip>
+            <HeroTooltip content="X/Twitter">
               <Button isIconOnly size="lg" variant="bordered">
                 <FaXTwitter />
               </Button>
-            </Tooltip>
-            <Tooltip content="Goodreads">
+            </HeroTooltip>
+            <HeroTooltip content="Goodreads">
               <Button isIconOnly size="lg" variant="bordered">
                 <FaGoodreadsG />
               </Button>
-            </Tooltip>
+            </HeroTooltip>
             <Button
               color="warning"
               size="lg"
@@ -139,12 +204,97 @@ export default function Home() {
         <br />
         <div className="p-4 bottom-0">
           <Button
+            onPress={onOpen}
             variant="flat"
-            startContent={<LuChartNoAxesCombined />}
+            startContent={<MdQueryStats />}
             className={`${fontMono.className}`}
           >
-            Site Stats
+            Stats for nerds
           </Button>
+          <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+            <ModalContent>
+              {(onClose) => (
+                <>
+                  <ModalHeader className="flex flex-col gap-1">
+                    Site Statistics
+                  </ModalHeader>
+                  <ModalBody>
+                    <p className="text-lg font-semibold">1.2K Views</p>
+                    <ChartContainer
+                      config={chartConfig}
+                      className="min-h-[200px] w-full"
+                    >
+                      <AreaChart
+                        accessibilityLayer
+                        data={chartData}
+                        margin={{
+                          left: 12,
+                          right: 12,
+                        }}
+                      >
+                        <XAxis
+                          dataKey="month"
+                          tickLine={false}
+                          axisLine={false}
+                          tickMargin={8}
+                          tickFormatter={(value) => value.slice(0, 3)}
+                        />
+
+                        <Area
+                          dataKey="desktop"
+                          type="natural"
+                          fill="var(--color-desktop)"
+                          fillOpacity={0.4}
+                          stroke="var(--color-desktop)"
+                        />
+                      </AreaChart>
+                    </ChartContainer>
+                    <p className="text-lg font-semibold">Top Countries</p>
+                    <ChartContainer config={chartConfig}>
+                      <BarChart
+                        accessibilityLayer
+                        data={countryData}
+                        layout="vertical"
+                        margin={{
+                          right: 16,
+                        }}
+                      >
+                        <YAxis
+                          dataKey="country"
+                          type="category"
+                          tickLine={false}
+                          tickMargin={10}
+                          axisLine={false}
+                          tickFormatter={(value) => value.slice(0, 3)}
+                          hide
+                        />
+                        <XAxis dataKey="views" type="number" hide />
+                        <Bar
+                          dataKey="views"
+                          layout="vertical"
+                          fill="var(--color-desktop)"
+                          radius={4}
+                        >
+                          <LabelList
+                            dataKey="country"
+                            position="insideLeft"
+                            offset={8}
+                            className="fill-secondary-foreground"
+                            fontSize={12}
+                          />
+                        </Bar>
+                      </BarChart>
+                    </ChartContainer>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="danger" variant="light" onPress={onClose}>
+                      Close
+                    </Button>
+                  </ModalFooter>
+                </>
+              )}
+            </ModalContent>
+          </Modal>
           <br />
           <br />
           <p>© Aniruddha Mukherjee, 2025</p>
