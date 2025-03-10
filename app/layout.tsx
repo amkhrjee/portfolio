@@ -33,6 +33,11 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
+      <script
+        src="https://beamanalytics.b-cdn.net/beam.min.js"
+        data-token="2471c6fc-54eb-449d-bf40-814496412f30"
+        async
+      ></script>
       <body
         className={`min-h-screen bg-background ${fontSans.className} antialiased md:px-16 lg:px-36`}
       >
