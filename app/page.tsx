@@ -25,7 +25,7 @@ import { TbBubble } from "react-icons/tb";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "@heroui/link";
-import { redirect } from "next/navigation";
+import { redirect, RedirectType } from "next/navigation";
 import { MdQueryStats } from "react-icons/md";
 
 import { FaGoodreadsG } from "react-icons/fa";
@@ -130,7 +130,12 @@ export default function Home() {
         transition={{ delay: 0.5 }}
         className="p-4 flex flex-row gap-4"
       >
-        <Button color="success" startContent={<LuMail />} variant="bordered">
+        <Button
+          color="success"
+          startContent={<LuMail />}
+          variant="bordered"
+          onPress={() => (window.location.href = "mailto:amkhrjee@gmail.com")}
+        >
           {strings[language]["contact-label"]}
         </Button>
         <Button
@@ -186,7 +191,17 @@ export default function Home() {
           <br />
 
           <div className="flex flex-row gap-2 justify-start">
-            <Button size="lg" startContent={<LuFilePen />} variant="bordered">
+            <Button
+              onPress={() =>
+                redirect(
+                  "https://amukhrjee.substack.com/",
+                  RedirectType.replace
+                )
+              }
+              size="lg"
+              startContent={<LuFilePen />}
+              variant="bordered"
+            >
               Blog
             </Button>
             <Button

@@ -98,9 +98,9 @@ export default function Page() {
                 initial={{ opacity: 0, translateY: -20 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{ delay: 0.5 }}
+                key={project.title}
               >
                 <Project
-                  key={project.title}
                   description={project.description[language]}
                   link={project.link}
                   tags={project.tags}
@@ -118,9 +118,9 @@ export default function Page() {
                 initial={{ opacity: 0, translateY: -20 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{ delay: 0.5 }}
+                key={project.title}
               >
                 <Project
-                  key={project.title}
                   description={project.description[language]}
                   link={project.link}
                   tags={project.tags}
