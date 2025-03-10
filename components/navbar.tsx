@@ -11,7 +11,7 @@ import {
 import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
 import Link from "next/link";
 
-import { BanglaSans } from "@/config/fonts";
+import { BanglaSans, fontSans } from "@/config/fonts";
 import { useTheme } from "next-themes";
 import { useContext } from "react";
 import { SetLanguageContext } from "@/app/context/SetLanguageContext";
@@ -24,7 +24,7 @@ export const Navbar = () => {
   const setLanguage = useContext(SetLanguageContext);
 
   return (
-    <HeroUINavbar>
+    <HeroUINavbar className={fontSans.className}>
       <NavbarBrand>
         <motion.div
           initial={{ opacity: 0, translateX: -20 }}

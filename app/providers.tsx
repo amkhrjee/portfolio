@@ -9,6 +9,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
 import { SetLanguageContext } from "./context/SetLanguageContext";
+import { BanglaSans, fontSans } from "@/config/fonts";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -31,7 +32,15 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       <NextThemesProvider {...themeProps}>
         <LanguageContext.Provider value={language}>
           <SetLanguageContext.Provider value={setLanguage}>
-            {children}
+            <div
+              className={
+                language === Language.en
+                  ? fontSans.className
+                  : BanglaSans.className
+              }
+            >
+              {children}
+            </div>
           </SetLanguageContext.Provider>
         </LanguageContext.Provider>
       </NextThemesProvider>

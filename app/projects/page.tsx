@@ -8,17 +8,19 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@heroui/dropdown";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@heroui/button";
 
 import { projects } from "./data";
 
 import Project from "@/components/project";
+import { LanguageContext } from "../context/LanguageContext";
+import { strings } from "@/config/strings";
 
 export default function Page() {
   const [sortby, setSortby] = useState<Set<string>>(new Set(["latest"]));
   const [category, setCategory] = useState<Set<string>>(new Set(["software"]));
-
+  const language = useContext(LanguageContext);
   return (
     <>
       <div className="p-4 flex justify-between items-center">
@@ -26,8 +28,8 @@ export default function Page() {
           <DropdownTrigger>
             <Button endContent={<LuChevronDown />} variant="solid">
               {category.has("software")
-                ? "Software Engineering"
-                : "Machine Learning"}
+                ? strings[language]["software-engg-label"]
+                : strings[language]["machine-learning-label"]}
             </Button>
           </DropdownTrigger>
           <DropdownMenu
@@ -39,14 +41,21 @@ export default function Page() {
             // @ts-ignore
             onSelectionChange={setCategory}
           >
-            <DropdownItem key="software">Software Engineering</DropdownItem>
-            <DropdownItem key="ml">Machine Learning</DropdownItem>
+            <DropdownItem key="software">
+              {strings[language]["software-engg-label"]}
+            </DropdownItem>
+            <DropdownItem key="ml">
+              {strings[language]["machine-learning-label"]}
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
         <Dropdown>
           <DropdownTrigger>
             <Button startContent={<GoSortDesc />} variant="flat">
-              Sort by: {sortby}
+              {strings[language]["sort-by"]}:{" "}
+              {Array.from(sortby).join("") === "latest"
+                ? strings[language]["latest"]
+                : strings[language]["popularity"]}
             </Button>
           </DropdownTrigger>
           <DropdownMenu
@@ -58,8 +67,12 @@ export default function Page() {
             // @ts-ignore
             onSelectionChange={setSortby}
           >
-            <DropdownItem key="latest">Latest</DropdownItem>
-            <DropdownItem key="popularity">Popularity</DropdownItem>
+            <DropdownItem key="latest">
+              {strings[language]["latest"]}
+            </DropdownItem>
+            <DropdownItem key="popularity">
+              {strings[language]["popularity"]}
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>
@@ -72,7 +85,7 @@ export default function Page() {
             .map((project) => (
               <Project
                 key={project.title}
-                description={project.description}
+                description={project.description[language]}
                 link={project.link}
                 tags={project.tags}
                 title={project.title}
@@ -86,7 +99,7 @@ export default function Page() {
             .map((project) => (
               <Project
                 key={project.title}
-                description={project.description}
+                description={project.description[language]}
                 link={project.link}
                 tags={project.tags}
                 title={project.title}

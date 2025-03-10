@@ -1,8 +1,10 @@
 export const projects = [
   {
     title: "tinypy",
-    description:
+    description: [
       "A tiny linear algebra library. Supports core matrix functionalities of NumPy, including QR decompositions, determining rank, eigenvalues etc.",
+      "একটি ছোট লিনিয়ার অ্যালজেব্রা লাইব্রেরি। NumPy এর মূল ম্যাট্রিক্স কার্যকারিতা সমর্থন করে, যার মধ্যে QR ডিকম্পোজিশন, র‍্যাঙ্ক নির্ধারণ, আইগেনভ্যালু ইত্যাদি অন্তর্ভুক্ত।",
+    ],
     link: "#",
     tags: ["python", "library", "linear algebra"],
     date: "2024-11",
@@ -11,8 +13,10 @@ export const projects = [
   },
   {
     title: "wp",
-    description:
+    description: [
       "Super-fast scraping and parsing library written in Rust. Made with the aim of scraping wikipedia data for training LLMs.",
+      "রাস্টে লেখা একটি সুপার-দ্রুত স্ক্র্যাপিং এবং পার্সিং লাইব্রেরি। LLM-এর জন্য উইকিপিডিয়া ডেটা স্ক্র্যাপ করার লক্ষ্যে তৈরি।",
+    ],
     link: "#",
     tags: ["rust", "library", "web scraping", "parser"],
     date: "2024-09",
@@ -21,8 +25,10 @@ export const projects = [
   },
   {
     title: "Pathfinder",
-    description:
+    description: [
       "Visualiser for pathfinding algorithms such as Djikstra & local beam. Written in golang with raylib. Got semi-viral on reddit.",
+      "ডায়াক্সট্রা বং লোকাল বিমের মতো পথ অনুসন্ধান অ্যালগরিদমগুলির জন্য ভিজ্যুয়ালাইজার। গো-ল্যাঙ্গ এবং রেইলিব দিয়ে লেখা। রেডিটে সেমি-ভাইরাল হয়েছিল।",
+    ],
     link: "#",
     tags: ["golang", "gui", "raylib", "algorithms"],
     date: "2024-08",
@@ -31,8 +37,10 @@ export const projects = [
   },
   {
     title: "Fontonic",
-    description:
+    description: [
       "Browser extension for changing typography of any website. Written in Typescript, styled with DaisyUI. No frameworks used. Cross-browser compatible.",
+      "যেকোনো ওয়েবসাইটের টাইপোগ্রাফি পরিবর্তনের জন্য ব্রাউজার এক্সটেনশন। টাইপস্ক্রিপ্টে লেখা এবং ডেইজি ইউআই দিয়ে স্টাইল করা হয়েছে। কোনো ফ্রেমওয়ার্ক ব্যবহার করা হয়নি। ক্রস-ব্রাউজার সামঞ্জস্যপূর্ণ।",
+    ],
     link: "#",
     tags: ["chrome", "firefox", "extension", "typescript"],
     users: 2000,
@@ -41,8 +49,10 @@ export const projects = [
   },
   {
     title: "ocwd",
-    description:
+    description: [
       "CLI tool for bulk downloading course resources from MIT OpenCourseWare. Even people from MIT use this tool. Written in shell scripts. Cross-OS compatible.",
+      "MIT OpenCourseWare থেকে কোর্স রিসোর্সগুলি বাল্ক ডাউনলোড করার জন্য CLI টুল। MIT-এর লোকেরাও এই টুল ব্যবহার করে। শেল স্ক্রিপ্টে লেখা। ক্রস-ওএস সামঞ্জস্যপূর্ণ।",
+    ],
     link: "#",
     tags: ["powershell", "bash", "cli-tool", "mit"],
     users: 700,
@@ -51,8 +61,10 @@ export const projects = [
   },
   {
     title: "pygraphia",
-    description:
+    description: [
       "Python library for working with graph data structures. Made while taking Graph Theory course at university.",
+      "গ্রাফ ডেটা স্ট্রাকচারের সাথে কাজ করার জন্য পাইথন লাইব্রেরি। বিশ্ববিদ্যালয়ে গ্রাফ থিওরি কোর্স করার সময় তৈরি করেছিলাম।",
+    ],
     link: "#",
     tags: ["python", "library", "graphs", "algorithms"],
     date: "2023-06",
@@ -61,8 +73,10 @@ export const projects = [
   },
   {
     title: "GH Lines",
-    description:
+    description: [
       "A chrome extension that shows line counts of files in the GitHub source tree.",
+      "GitHub সোর্স ট্রিতে ফাইলগুলির লাইন গণনা প্রদর্শন করার জন্য একটি ক্রোম এক্সটেনশন।",
+    ],
     link: "#",
     tags: ["chrome", "extension", "javascript"],
     date: "2024-08",
@@ -71,8 +85,10 @@ export const projects = [
   },
   {
     title: "Bytecalcweb",
-    description:
+    description: [
       "A full-fledged calculator aimed towards CS students. Based on my tree-walk interpreter written in TypeScript.",
+      "কম্পিউটার বিজ্ঞান শিক্ষার্থীদের জন্য একটি পূর্ণাঙ্গ ক্যালকুলেটর। টাইপস্ক্রিপ্টে লেখা একটি ট্রি-ওয়াক ইন্টারপ্রেটারের উপর ভিত্তি করে তৈরি।",
+    ],
     link: "#",
     tags: ["pwa", "typescript", "interpreter"],
     date: "2024-04",
@@ -86,8 +102,10 @@ export const projects = [
     category: "ml",
     users: 0,
     date: "2024-05",
-    description:
+    description: [
       "Built a GPT-2 based LLM from scratch. Pre-trained on Assamese data scraped using my tool wp on RTX 4090 for 70+ hours. Built as an university project.",
+      "শূন্য থেকে একটি GPT-2 ভিত্তিক LLM তৈরি করা হয়েছে। আমার টুল wp ব্যবহার করে স্ক্র্যাপ করা অসমীয়া ডেটাতে প্রি-ট্রেইন করা হয়েছে। RTX 4090 এ ৭০+ ঘন্টা প্রশিক্ষণ। বিশ্ববিদ্যালয় প্রকল্প হিসাবে তৈরি।",
+    ],
   },
   {
     title: "BMI Guesser",
@@ -96,7 +114,9 @@ export const projects = [
     category: "ml",
     users: 0,
     date: "2024-03",
-    description:
+    description: [
       "Trained a model on images for predicting BMIs using MTCNN. Built as an university project.",
+      "MTCNN ব্যবহার করে BMI অনুমানের জন্য ইমেজে প্রশিক্ষিত একটি মডেল। বিশ্ববিদ্যালয় প্রকল্প হিসাবে তৈরি।",
+    ],
   },
 ];

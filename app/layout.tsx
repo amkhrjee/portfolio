@@ -37,7 +37,6 @@ export default function RootLayout({
         className={`min-h-screen bg-background ${fontSans.className} antialiased`}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {/* <Providers> */}
           <Navbar />
           {children}
         </Providers>

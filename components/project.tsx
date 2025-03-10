@@ -1,7 +1,10 @@
+import { LanguageContext } from "@/app/context/LanguageContext";
+import { strings } from "@/config/strings";
 import { Card, CardHeader, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
 import { Link } from "@heroui/link";
+import { useContext } from "react";
 
 export default function Project(props: {
   title: string;
@@ -10,6 +13,7 @@ export default function Project(props: {
   description: string;
   users?: number;
 }) {
+  const language = useContext(LanguageContext);
   return (
     <Card>
       <CardHeader className="flex flex-col items-start gap-2">
@@ -24,7 +28,9 @@ export default function Project(props: {
             {props.title}
           </Link>
           {props.users ? (
-            <span className="text-sm text-warning">{props.users}+ users</span>
+            <span className="text-sm text-warning">
+              {props.users}+ {strings[language]["users-label"]}
+            </span>
           ) : (
             ""
           )}
