@@ -44,6 +44,7 @@ import { useContext } from "react";
 import { strings } from "@/config/strings";
 import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
+import { addToast } from "@heroui/toast";
 
 export default function Home() {
   const language = useContext(LanguageContext);
@@ -158,26 +159,52 @@ export default function Home() {
           <br />
           <div className="flex flex-row gap-2 justify-start">
             <HeroTooltip content="Linkedin">
-              <Button isIconOnly size="lg" variant="bordered">
+              <Button
+                onPress={() => redirect("https://linkedin.com/amkhrjee")}
+                isIconOnly
+                size="lg"
+                variant="bordered"
+              >
                 <FaLinkedinIn />
               </Button>
             </HeroTooltip>
             <HeroTooltip content="GitHub">
-              <Button isIconOnly size="lg" variant="bordered">
+              <Button
+                onPress={() => redirect("https://github.com/amkhrjee")}
+                isIconOnly
+                size="lg"
+                variant="bordered"
+              >
                 <LuGithub />
               </Button>
             </HeroTooltip>
             <HeroTooltip content="X/Twitter">
-              <Button isIconOnly size="lg" variant="bordered">
+              <Button
+                onPress={() => redirect("https://x.com/amkhrjee")}
+                isIconOnly
+                size="lg"
+                variant="bordered"
+              >
                 <FaXTwitter />
               </Button>
             </HeroTooltip>
             <HeroTooltip content="Goodreads">
-              <Button isIconOnly size="lg" variant="bordered">
+              <Button
+                onPress={() => redirect("https://goodreads.com/amkhrjee")}
+                isIconOnly
+                size="lg"
+                variant="bordered"
+              >
                 <FaGoodreadsG />
               </Button>
             </HeroTooltip>
             <Button
+              onPress={() => {
+                addToast({
+                  title: "Coming soon",
+                  description: "Under construction",
+                });
+              }}
               color="warning"
               size="lg"
               startContent={<TbBubble />}
@@ -192,12 +219,7 @@ export default function Home() {
 
           <div className="flex flex-row gap-2 justify-start">
             <Button
-              onPress={() =>
-                redirect(
-                  "https://amukhrjee.substack.com/",
-                  RedirectType.replace
-                )
-              }
+              onPress={() => redirect("https://amukhrjee.substack.com/")}
               size="lg"
               startContent={<LuFilePen />}
               variant="bordered"
@@ -217,7 +239,13 @@ export default function Home() {
         <br />
         <div className="p-4 bottom-0">
           <Button
-            onPress={onOpen}
+            // onPress={onOpen}
+            onPress={() => {
+              addToast({
+                title: "Coming soon",
+                description: "Under construction",
+              });
+            }}
             variant="flat"
             startContent={<MdQueryStats />}
             className={`${fontMono.className}`}

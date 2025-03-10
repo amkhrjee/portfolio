@@ -10,6 +10,7 @@ import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
 import { SetLanguageContext } from "./context/SetLanguageContext";
 import { BanglaSans, fontSans } from "@/config/fonts";
+import { ToastProvider } from "@heroui/toast";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -39,6 +40,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
                   : BanglaSans.className
               }
             >
+              <ToastProvider placement="top-right" toastOffset={80} />
               {children}
             </div>
           </SetLanguageContext.Provider>
