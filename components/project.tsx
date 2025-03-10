@@ -24,7 +24,7 @@ export default function Project(props: {
             {props.title}
           </Link>
           {props.users ? (
-            <span className="text-sm text-success">{props.users}+ users</span>
+            <span className="text-sm text-warning">{props.users}+ users</span>
           ) : (
             ""
           )}

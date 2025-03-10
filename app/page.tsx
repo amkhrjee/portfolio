@@ -2,6 +2,7 @@
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
+import { Tooltip } from "@heroui/tooltip";
 import {
   LuClipboardList,
   LuEye,
@@ -15,6 +16,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { LuChartNoAxesCombined } from "react-icons/lu";
+import { FaGoodreadsG } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -63,15 +65,26 @@ export default function Home() {
         <p>Connect with me</p>
         <br />
         <div className="flex flex-row gap-2 justify-start">
-          <Button isIconOnly size="lg" variant="bordered">
-            <FaLinkedinIn />
-          </Button>
-          <Button isIconOnly size="lg" variant="bordered">
-            <LuGithub />
-          </Button>
-          <Button isIconOnly size="lg" variant="bordered">
-            <FaXTwitter />
-          </Button>
+          <Tooltip content="Linkedin">
+            <Button isIconOnly size="lg" variant="bordered">
+              <FaLinkedinIn />
+            </Button>
+          </Tooltip>
+          <Tooltip content="GitHub">
+            <Button isIconOnly size="lg" variant="bordered">
+              <LuGithub />
+            </Button>
+          </Tooltip>
+          <Tooltip content="X/Twitter">
+            <Button isIconOnly size="lg" variant="bordered">
+              <FaXTwitter />
+            </Button>
+          </Tooltip>
+          <Tooltip content="Goodreads">
+            <Button isIconOnly size="lg" variant="bordered">
+              <FaGoodreadsG />
+            </Button>
+          </Tooltip>
           <Button
             color="warning"
             size="lg"
