@@ -10,6 +10,7 @@ import {
 } from "@heroui/dropdown";
 import { useContext, useState } from "react";
 import { Button } from "@heroui/button";
+import { motion } from "framer-motion";
 
 import { projects } from "./data";
 
@@ -24,57 +25,67 @@ export default function Page() {
   return (
     <>
       <div className="p-4 flex justify-between items-center">
-        <Dropdown>
-          <DropdownTrigger>
-            <Button endContent={<LuChevronDown />} variant="solid">
-              {category.has("software")
-                ? strings[language]["software-engg-label"]
-                : strings[language]["machine-learning-label"]}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            disallowEmptySelection
-            aria-label="Single selection"
-            selectedKeys={category}
-            selectionMode="single"
-            variant="solid"
-            // @ts-ignore
-            onSelectionChange={setCategory}
-          >
-            <DropdownItem key="software">
-              {strings[language]["software-engg-label"]}
-            </DropdownItem>
-            <DropdownItem key="ml">
-              {strings[language]["machine-learning-label"]}
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <Dropdown>
-          <DropdownTrigger>
-            <Button startContent={<GoSortDesc />} variant="flat">
-              {strings[language]["sort-by"]}:{" "}
-              {Array.from(sortby).join("") === "latest"
-                ? strings[language]["latest"]
-                : strings[language]["popularity"]}
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            disallowEmptySelection
-            aria-label="Single selection"
-            selectedKeys={sortby}
-            selectionMode="single"
-            variant="flat"
-            // @ts-ignore
-            onSelectionChange={setSortby}
-          >
-            <DropdownItem key="latest">
-              {strings[language]["latest"]}
-            </DropdownItem>
-            <DropdownItem key="popularity">
-              {strings[language]["popularity"]}
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        <motion.div
+          initial={{ opacity: 0, translateX: -20 }}
+          animate={{ opacity: 1, translateX: 0 }}
+        >
+          <Dropdown>
+            <DropdownTrigger>
+              <Button endContent={<LuChevronDown />} variant="solid">
+                {category.has("software")
+                  ? strings[language]["software-engg-label"]
+                  : strings[language]["machine-learning-label"]}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              disallowEmptySelection
+              aria-label="Single selection"
+              selectedKeys={category}
+              selectionMode="single"
+              variant="solid"
+              // @ts-ignore
+              onSelectionChange={setCategory}
+            >
+              <DropdownItem key="software">
+                {strings[language]["software-engg-label"]}
+              </DropdownItem>
+              <DropdownItem key="ml">
+                {strings[language]["machine-learning-label"]}
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, translateX: 20 }}
+          animate={{ opacity: 1, translateX: 0 }}
+        >
+          <Dropdown>
+            <DropdownTrigger>
+              <Button startContent={<GoSortDesc />} variant="flat">
+                {strings[language]["sort-by"]}:{" "}
+                {Array.from(sortby).join("") === "latest"
+                  ? strings[language]["latest"]
+                  : strings[language]["popularity"]}
+              </Button>
+            </DropdownTrigger>
+            <DropdownMenu
+              disallowEmptySelection
+              aria-label="Single selection"
+              selectedKeys={sortby}
+              selectionMode="single"
+              variant="flat"
+              // @ts-ignore
+              onSelectionChange={setSortby}
+            >
+              <DropdownItem key="latest">
+                {strings[language]["latest"]}
+              </DropdownItem>
+              <DropdownItem key="popularity">
+                {strings[language]["popularity"]}
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </motion.div>
       </div>
 
       <div className="p-4 flex flex-col gap-4">
@@ -83,28 +94,40 @@ export default function Page() {
             .filter((project) => category.has(project.category))
             .sort((a, b) => -a.date.localeCompare(b.date))
             .map((project) => (
-              <Project
-                key={project.title}
-                description={project.description[language]}
-                link={project.link}
-                tags={project.tags}
-                title={project.title}
-                users={project.users}
-              />
+              <motion.div
+                initial={{ opacity: 0, translateY: -20 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Project
+                  key={project.title}
+                  description={project.description[language]}
+                  link={project.link}
+                  tags={project.tags}
+                  title={project.title}
+                  users={project.users}
+                />
+              </motion.div>
             ))}
         {sortby.has("popularity") &&
           projects
             .filter((project) => category.has(project.category))
             .sort((a, b) => b.users - a.users)
             .map((project) => (
-              <Project
-                key={project.title}
-                description={project.description[language]}
-                link={project.link}
-                tags={project.tags}
-                title={project.title}
-                users={project.users}
-              />
+              <motion.div
+                initial={{ opacity: 0, translateY: -20 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Project
+                  key={project.title}
+                  description={project.description[language]}
+                  link={project.link}
+                  tags={project.tags}
+                  title={project.title}
+                  users={project.users}
+                />
+              </motion.div>
             ))}
       </div>
     </>
