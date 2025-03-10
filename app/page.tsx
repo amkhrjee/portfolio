@@ -119,7 +119,12 @@ export default function Home() {
         <br />
         <p>
           {strings[language]["hero-desc"]}{" "}
-          <Link isExternal showAnchorIcon color="foreground" href="#">
+          <Link
+            isExternal
+            showAnchorIcon
+            color="foreground"
+            href="https://drive.google.com/file/d/1NOtS3oVLpQQdmEpaFtWOe7dqBj34d1yF/view?usp=sharing"
+          >
             <u>{strings[language]["resume-label"]}</u>
           </Link>
           {language === Language.en ? "." : ""}
