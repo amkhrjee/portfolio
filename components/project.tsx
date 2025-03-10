@@ -15,7 +15,7 @@ export default function Project(props: {
 }) {
   const language = useContext(LanguageContext);
   return (
-    <Card>
+    <Card className="md: h-full">
       <CardHeader className="flex flex-col items-start gap-2">
         <div className="w-full flex justify-between items-center">
           <Link

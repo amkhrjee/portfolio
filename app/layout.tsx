@@ -34,7 +34,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-        className={`min-h-screen bg-background ${fontSans.className} antialiased`}
+        className={`min-h-screen bg-background ${fontSans.className} antialiased md:px-16 lg:px-36`}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Navbar />

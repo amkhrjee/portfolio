@@ -88,7 +88,7 @@ export default function Page() {
         </motion.div>
       </div>
 
-      <div className="p-4 flex flex-col gap-4">
+      <div className="p-4 flex flex-col gap-4 md:grid grid-cols-2">
         {sortby.has("latest") &&
           projects
             .filter((project) => category.has(project.category))

@@ -42,7 +42,6 @@ import {
 } from "recharts";
 import { useContext } from "react";
 import { strings } from "@/config/strings";
-import Markdown from "react-markdown";
 import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
 
@@ -92,8 +91,8 @@ export default function Home() {
   } satisfies ChartConfig;
 
   return (
-    <>
-      <div className="p-4 flex flex-row gap-4 items-center">
+    <div className="lg:px-28">
+      <div className="p-4 flex flex-row gap-4 items-center ">
         <Image
           alt="My Photo"
           className="rounded-2xl"
@@ -115,9 +114,7 @@ export default function Home() {
         transition={{ delay: 0.3 }}
         className="p-4"
       >
-        <p>
-          <Markdown>{strings[language]["hero-title"]}</Markdown>
-        </p>
+        <p>{strings[language]["hero-title"]}</p>
         <br />
         <p>
           {strings[language]["hero-desc"]}{" "}
@@ -301,6 +298,6 @@ export default function Home() {
           <p>© Aniruddha Mukherjee, 2025</p>
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }
