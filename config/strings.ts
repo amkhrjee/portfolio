@@ -23,7 +23,7 @@ export const strings: Record<Language, Translation> = {
   0: {
     "hero-hi": "Hi,👋🏻",
     "hero-intro": "I'm Aniruddha.",
-    "hero-title": "I'm a _software engineer_ with an eye for design.",
+    "hero-title": "I'm a software engineer with an eye for design.",
     "hero-desc":
       "I'm a fresh CS graduate with deep interests in web, databases, distributed systems, data and everything in-between. You can view my",
     "resume-label": "resume",
