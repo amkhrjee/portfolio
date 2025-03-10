@@ -29,7 +29,7 @@ import { redirect } from "next/navigation";
 import { MdQueryStats } from "react-icons/md";
 
 import { FaGoodreadsG } from "react-icons/fa";
-import { fontMono } from "@/config/fonts";
+import { BanglaSans, fontMono } from "@/config/fonts";
 import { ChartConfig, ChartContainer } from "@/components/ui/chart";
 import {
   Area,
@@ -40,8 +40,14 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useContext } from "react";
+import { strings } from "@/config/strings";
+import Markdown from "react-markdown";
+import { LanguageContext } from "./context/LanguageContext";
+import { Language } from "@/config/definitions";
 
 export default function Home() {
+  const language = useContext(LanguageContext);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const chartData = [
     { month: "January", desktop: 186, mobile: 80 },
@@ -99,8 +105,8 @@ export default function Home() {
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.15 }}
         >
-          <p>Hi,👋🏻</p>
-          <p className="text-3xl">I&apos;m Aniruddha.</p>
+          <p>{strings[language]["hero-hi"]}</p>
+          <p className="text-3xl">{strings[language]["hero-intro"]}</p>
         </motion.div>
       </div>
       <motion.div
@@ -110,16 +116,15 @@ export default function Home() {
         className="p-4"
       >
         <p>
-          I&apos;m a <u>software engineer</u> with an eye for design.
+          <Markdown>{strings[language]["hero-title"]}</Markdown>
         </p>
         <br />
         <p>
-          I&apos;m a fresh CS graduate with deep interests in web, databases,
-          distributed systems, data and everything in-between. You can view my{" "}
+          {strings[language]["hero-desc"]}{" "}
           <Link isExternal showAnchorIcon color="foreground" href="#">
-            <u>resume</u>
+            <u>{strings[language]["resume-label"]}</u>
           </Link>
-          .
+          {language === Language.en ? "." : ""}
         </p>
       </motion.div>
       <motion.div
@@ -129,7 +134,7 @@ export default function Home() {
         className="p-4 flex flex-row gap-4"
       >
         <Button color="success" startContent={<LuMail />} variant="bordered">
-          Contact me
+          {strings[language]["contact-label"]}
         </Button>
         <Button
           color="default"
@@ -137,7 +142,7 @@ export default function Home() {
           variant="bordered"
           onPress={() => redirect("/projects")}
         >
-          View my work
+          {strings[language]["view-work-label"]}
         </Button>
       </motion.div>
       <Divider />
@@ -147,7 +152,7 @@ export default function Home() {
         transition={{ delay: 0.5 }}
       >
         <div className="p-4">
-          <p>Connect with me</p>
+          <p>{strings[language]["connect-with-me-title"]}</p>
           <br />
           <div className="flex flex-row gap-2 justify-start">
             <HeroTooltip content="Linkedin">
@@ -180,11 +185,7 @@ export default function Home() {
             </Button>
           </div>
           <br />
-          <p>
-            Althought extremely irregular, I try to write a blog-post every once
-            in a while. I also maintain a collection of helpful learning
-            resources.
-          </p>
+          <p>{strings[language]["outro-desc"]}</p>
           <br />
 
           <div className="flex flex-row gap-2 justify-start">

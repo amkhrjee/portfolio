@@ -6,6 +6,9 @@ import * as React from "react";
 import { HeroUIProvider } from "@heroui/system";
 import { useRouter } from "next/navigation";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { LanguageContext } from "./context/LanguageContext";
+import { Language } from "@/config/definitions";
+import { SetLanguageContext } from "./context/SetLanguageContext";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -22,10 +25,16 @@ declare module "@react-types/shared" {
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
-
+  const [language, setLanguage] = React.useState(Language.en);
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+      <NextThemesProvider {...themeProps}>
+        <LanguageContext.Provider value={language}>
+          <SetLanguageContext.Provider value={setLanguage}>
+            {children}
+          </SetLanguageContext.Provider>
+        </LanguageContext.Provider>
+      </NextThemesProvider>
     </HeroUIProvider>
   );
 }

@@ -13,9 +13,16 @@ import Link from "next/link";
 
 import { BanglaSans } from "@/config/fonts";
 import { useTheme } from "next-themes";
+import { useContext } from "react";
+import { SetLanguageContext } from "@/app/context/SetLanguageContext";
+import { LanguageContext } from "@/app/context/LanguageContext";
+import { Language } from "@/config/definitions";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const language = useContext(LanguageContext);
+  const setLanguage = useContext(SetLanguageContext);
+
   return (
     <HeroUINavbar>
       <NavbarBrand>
@@ -38,8 +45,13 @@ export const Navbar = () => {
               className={BanglaSans.className}
               startContent={<LuLanguages />}
               variant="ghost"
+              onPress={() =>
+                setLanguage!(
+                  language === Language.en ? Language.bn : Language.en
+                )
+              }
             >
-              বাংলা
+              {language === Language.en ? "বাংলা" : "English"}
             </Button>
           </NavbarItem>
           <NavbarItem>
