@@ -43,7 +43,7 @@ export const projects = [
     ],
     link: "#",
     tags: ["chrome", "firefox", "extension", "typescript"],
-    users: 2000,
+    users: 2500,
     date: "2024-02",
     category: "software",
   },
