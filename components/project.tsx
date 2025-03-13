@@ -23,7 +23,7 @@ export default function Project(props: {
             showAnchorIcon
             className="text-2xl font-semibold"
             color="primary"
-            href="#"
+            href={props.link}
           >
             {props.title}
           </Link>
