@@ -53,7 +53,7 @@ export const projects = [
       "CLI tool for bulk downloading course resources from MIT OpenCourseWare. Even people from MIT use this tool. Written in shell scripts. Cross-OS compatible.",
       "MIT OpenCourseWare থেকে কোর্স রিসোর্সগুলি বাল্ক ডাউনলোড করার জন্য CLI টুল। MIT-এর লোকেরাও এই টুল ব্যবহার করে। শেল স্ক্রিপ্টে লেখা। ক্রস-ওএস সামঞ্জস্যপূর্ণ।",
     ],
-    link: "#",
+    link: "https://github.com/amkhrjee/ocwd",
     tags: ["powershell", "bash", "cli-tool", "mit"],
     users: 700,
     date: "2023-12",
