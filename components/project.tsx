@@ -1,4 +1,5 @@
 import { LanguageContext } from "@/app/context/LanguageContext";
+import { fontSans } from "@/config/fonts";
 import { strings } from "@/config/strings";
 import { Card, CardHeader, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
@@ -15,8 +16,10 @@ export default function Project(props: {
 }) {
   const language = useContext(LanguageContext);
   return (
-    <Card className="md: h-full">
-      <CardHeader className="flex flex-col items-start gap-2">
+    <Card className={`md:h-full`}>
+      <CardHeader
+        className={`${fontSans.className} flex flex-col items-start gap-2`}
+      >
         <div className="w-full flex justify-between items-center">
           <Link
             isExternal

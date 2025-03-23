@@ -5,14 +5,7 @@ import { Divider } from "@heroui/divider";
 import { Tooltip as HeroTooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from "@heroui/modal";
+import { HiOutlineSpeakerWave } from "react-icons/hi2";
 
 import {
   LuClipboardList,
@@ -25,22 +18,11 @@ import { TbBubble } from "react-icons/tb";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "@heroui/link";
-import { redirect, RedirectType } from "next/navigation";
-import { MdQueryStats } from "react-icons/md";
+import { redirect } from "next/navigation";
 
 import { FaGoodreadsG } from "react-icons/fa";
-import { BanglaSans, fontMono } from "@/config/fonts";
-import { ChartConfig, ChartContainer } from "@/components/ui/chart";
-import {
-  Area,
-  AreaChart,
-  Bar,
-  BarChart,
-  LabelList,
-  XAxis,
-  YAxis,
-} from "recharts";
-import { useContext } from "react";
+
+import { useContext, useRef } from "react";
 import { strings } from "@/config/strings";
 import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
@@ -48,48 +30,8 @@ import { addToast } from "@heroui/toast";
 
 export default function Home() {
   const language = useContext(LanguageContext);
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const chartData = [
-    { month: "January", desktop: 186, mobile: 80 },
-    { month: "February", desktop: 305, mobile: 200 },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
-  ];
-  const countryData = [
-    {
-      country: "🇮🇳 India",
-      views: 150,
-    },
-    {
-      country: "🇺🇸 USA",
-      views: 180,
-    },
-    {
-      country: "🇧🇷 Brazil",
-      views: 150,
-    },
-    {
-      country: "🇩🇪 Germany",
-      views: 130,
-    },
-    {
-      country: "🇯🇵 Japan",
-      views: 100,
-    },
-  ];
-
-  const chartConfig = {
-    desktop: {
-      label: "Desktop",
-      color: "#2563eb",
-    },
-    mobile: {
-      label: "Mobile",
-      color: "#60a5fa",
-    },
-  } satisfies ChartConfig;
+  const englishAudioRef = useRef<HTMLAudioElement>(new Audio("/English.aac"));
+  const banglaAudioRef = useRef<HTMLAudioElement>(new Audio("/Bangla.aac"));
 
   return (
     <div className="lg:px-28">
@@ -106,7 +48,24 @@ export default function Home() {
           transition={{ delay: 0.15 }}
         >
           <p>{strings[language]["hero-hi"]}</p>
-          <p className="text-3xl">{strings[language]["hero-intro"]}</p>
+          <div className="flex items-center  gap-2">
+            <p className="text-2xl">{strings[language]["hero-intro"]}</p>
+            <HeroTooltip content="Listen to me pronounce my name!">
+              <Button
+                isIconOnly
+                variant="flat"
+                onPress={() => {
+                  if (language === Language.en) {
+                    englishAudioRef.current.play();
+                  } else {
+                    banglaAudioRef.current.play();
+                  }
+                }}
+              >
+                <HiOutlineSpeakerWave />
+              </Button>
+            </HeroTooltip>
+          </div>
         </motion.div>
       </div>
       <motion.div
@@ -120,6 +79,7 @@ export default function Home() {
         <p>
           {strings[language]["hero-desc"]}{" "}
           <Link
+            target="_blank"
             isExternal
             showAnchorIcon
             color="foreground"

@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { SetLanguageContext } from "@/app/context/SetLanguageContext";
 import { LanguageContext } from "@/app/context/LanguageContext";
 import { Language } from "@/config/definitions";
+import clsx from "clsx";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -42,7 +43,11 @@ export const Navbar = () => {
         <NavbarContent justify="end">
           <NavbarItem>
             <Button
-              className={BanglaSans.className}
+              className={clsx(
+                language === Language.bn
+                  ? fontSans.className
+                  : BanglaSans.className
+              )}
               startContent={<LuLanguages />}
               variant="ghost"
               onPress={() =>
