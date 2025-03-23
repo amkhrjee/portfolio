@@ -30,8 +30,13 @@ import { addToast } from "@heroui/toast";
 
 export default function Home() {
   const language = useContext(LanguageContext);
-  const englishAudioRef = useRef<HTMLAudioElement>(new Audio("/English.aac"));
-  const banglaAudioRef = useRef<HTMLAudioElement>(new Audio("/Bangla.aac"));
+  // explanation for weird audio stuff: https://stackoverflow.com/a/67610596/12404524
+  const englishAudioRef = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/English.aac") : undefined
+  );
+  const banglaAudioRef = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/Bangla.aac") : undefined
+  );
 
   return (
     <div className="lg:px-28">
@@ -56,9 +61,9 @@ export default function Home() {
                 variant="flat"
                 onPress={() => {
                   if (language === Language.en) {
-                    englishAudioRef.current.play();
+                    englishAudioRef.current?.play();
                   } else {
-                    banglaAudioRef.current.play();
+                    banglaAudioRef.current?.play();
                   }
                 }}
               >
