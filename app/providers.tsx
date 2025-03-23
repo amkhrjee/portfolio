@@ -9,7 +9,6 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
 import { SetLanguageContext } from "./context/SetLanguageContext";
-import { BanglaSans, fontSans } from "@/config/fonts";
 import { ToastProvider } from "@heroui/toast";
 
 export interface ProvidersProps {
@@ -33,13 +32,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       <NextThemesProvider {...themeProps}>
         <LanguageContext.Provider value={language}>
           <SetLanguageContext.Provider value={setLanguage}>
-            <div
-              className={
-                language === Language.en
-                  ? fontSans.className
-                  : BanglaSans.className
-              }
-            >
+            <div>
               <ToastProvider placement="top-right" toastOffset={80} />
               {children}
             </div>
