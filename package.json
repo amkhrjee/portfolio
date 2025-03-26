@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
   },
   "dependencies": {
+    "@heroui/avatar": "^2.2.12",
     "@heroui/button": "2.2.13",
     "@heroui/card": "^2.2.14",
     "@heroui/chip": "^2.2.11",

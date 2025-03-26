@@ -22,6 +22,7 @@ import { TbBubble } from "react-icons/tb";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
+import Spotify from "@/components/ui/spotify";
 import { Language } from "@/config/definitions";
 import { strings } from "@/config/strings";
 import { addToast } from "@heroui/toast";
@@ -207,6 +208,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
+        <Spotify />
         <br />
         <div className="p-4 bottom-0">
           <p>© Aniruddha Mukherjee, 2025</p>
