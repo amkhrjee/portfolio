@@ -4,8 +4,7 @@ import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 
 import { Navbar } from "@/components/navbar";
-import { ShootingStars } from "@/components/ui/shooting-starts";
-import { StarsBackground } from "@/components/ui/stars-background";
+import Background from "@/components/ui/background";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 
@@ -41,13 +40,12 @@ export default function RootLayout({
         async
       ></script>
       <body
-        className={`min-h-screen bg-background ${fontSans.className} antialiased md:px-16 lg:px-36`}
+        className={`min-h-screen bg-background ${fontSans.className} antialiased`}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Navbar />
           <div className="relative z-10">{children}</div>
-          <ShootingStars />
-          <StarsBackground />
+          <Background />
         </Providers>
       </body>
     </html>

@@ -2,14 +2,14 @@
 
 import type { ThemeProviderProps } from "next-themes";
 
-import * as React from "react";
-import { HeroUIProvider } from "@heroui/system";
-import { useRouter } from "next/navigation";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
-import { SetLanguageContext } from "./context/SetLanguageContext";
+import { HeroUIProvider } from "@heroui/system";
 import { ToastProvider } from "@heroui/toast";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { useRouter } from "next/navigation";
+import * as React from "react";
+import { LanguageContext } from "./context/LanguageContext";
+import { SetLanguageContext } from "./context/SetLanguageContext";
 
 export interface ProvidersProps {
   children: React.ReactNode;
