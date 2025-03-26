@@ -1,6 +1,11 @@
 "use client";
+import { ClassValue, clsx } from "clsx";
 import React, { useEffect, useRef, useState } from "react";
-import { cn } from "../lib/utils";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface ShootingStar {
   id: number;

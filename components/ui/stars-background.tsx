@@ -1,4 +1,5 @@
 "use client";
+import { ClassValue, clsx } from "clsx";
 import React, {
   RefObject,
   useCallback,
@@ -6,7 +7,11 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { cn } from "../lib/utils";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface StarProps {
   x: number;
