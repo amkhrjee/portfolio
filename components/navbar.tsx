@@ -8,15 +8,14 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@heroui/navbar";
-import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
 import Link from "next/link";
+import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
 
+import { LanguageContext } from "@/app/context/LanguageContext";
+import { SetLanguageContext } from "@/app/context/SetLanguageContext";
+import { Language } from "@/config/definitions";
 import { useTheme } from "next-themes";
 import { useContext } from "react";
-import { SetLanguageContext } from "@/app/context/SetLanguageContext";
-import { LanguageContext } from "@/app/context/LanguageContext";
-import { Language } from "@/config/definitions";
-import clsx from "clsx";
 
 export const Navbar = () => {
   const { theme, setTheme } = useTheme();
@@ -60,7 +59,7 @@ export const Navbar = () => {
               }
               isIconOnly
               aria-label="Theme Change"
-              variant="ghost"
+              variant="light"
             >
               {theme == "light" ? <LuMoon /> : <LuSunMedium />}
             </Button>

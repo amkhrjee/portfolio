@@ -1,12 +1,16 @@
 "use client";
-import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
+import { Image } from "@heroui/image";
 import { Tooltip as HeroTooltip } from "@heroui/tooltip";
 import { motion } from "framer-motion";
 
 import { HiOutlineSpeakerWave } from "react-icons/hi2";
 
+import { Link } from "@heroui/link";
+import { redirect } from "next/navigation";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {
   LuClipboardList,
   LuEye,
@@ -15,18 +19,14 @@ import {
   LuMail,
 } from "react-icons/lu";
 import { TbBubble } from "react-icons/tb";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
-import { Link } from "@heroui/link";
-import { redirect } from "next/navigation";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
-import { useContext, useRef } from "react";
-import { strings } from "@/config/strings";
-import { LanguageContext } from "./context/LanguageContext";
 import { Language } from "@/config/definitions";
+import { strings } from "@/config/strings";
 import { addToast } from "@heroui/toast";
+import { useContext, useRef } from "react";
+import { LanguageContext } from "./context/LanguageContext";
 
 export default function Home() {
   const language = useContext(LanguageContext);
@@ -87,7 +87,6 @@ export default function Home() {
             target="_blank"
             isExternal
             showAnchorIcon
-            color="foreground"
             href="https://drive.google.com/file/d/1NOtS3oVLpQQdmEpaFtWOe7dqBj34d1yF/view?usp=sharing"
           >
             <u>{strings[language]["resume-label"]}</u>

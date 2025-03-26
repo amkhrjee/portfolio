@@ -3,8 +3,10 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { ShootingStars } from "@/components/ui/shooting-starts";
+import { StarsBackground } from "@/components/ui/stars-background";
+import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -43,7 +45,9 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Navbar />
-          {children}
+          <div className="relative z-10">{children}</div>
+          <ShootingStars />
+          <StarsBackground />
         </Providers>
       </body>
     </html>
