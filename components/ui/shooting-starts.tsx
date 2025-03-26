@@ -1,6 +1,6 @@
 "use client";
-import { cn } from "@/app/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
+import { cn } from "../lib/utils";
 
 interface ShootingStar {
   id: number;
