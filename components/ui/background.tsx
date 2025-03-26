@@ -5,14 +5,13 @@ import { StarsBackground } from "./stars-background";
 
 export default function Background() {
   const { theme } = useTheme();
-  if (theme == "dark") {
-    return (
-      <>
-        <ShootingStars />
-        <StarsBackground />
-      </>
-    );
-  } else {
-    return <></>;
-  }
+
+  if (theme !== "dark") return null;
+
+  return (
+    <>
+      <ShootingStars />
+      <StarsBackground />
+    </>
+  );
 }
