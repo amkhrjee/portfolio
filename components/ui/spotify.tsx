@@ -133,15 +133,14 @@ async function getCurrentPlaying() {
       const body = await fetch(url, payload);
       const response = await body.json();
       accessToken = response.access_token;
-      await collection.updateOne(
+
+      await collection.replaceOne(
         { _id: new ObjectId(documentId) },
         {
-          $set: {
-            access_token: accessToken,
-            refresh_token: response.refesh_token,
-            timestamp: new Date(),
-            expires_in: response.expires_in,
-          },
+          access_token: accessToken,
+          refresh_token: response.refesh_token,
+          expires_in: response.expires_in,
+          timestamp: new Date(),
         }
       );
     }
@@ -157,7 +156,6 @@ async function getCurrentPlaying() {
 }
 
 async function getTrackInfo(accessToken: string) {
-  console.log(accessToken);
   const url = "https://api.spotify.com/v1/me/player/currently-playing";
   try {
     const response = await fetch(url, {
