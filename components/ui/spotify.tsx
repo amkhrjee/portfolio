@@ -1,59 +1,190 @@
 import { Avatar } from "@heroui/avatar";
 import { Button } from "@heroui/button";
 import { Card, CardBody, CardHeader } from "@heroui/card";
-import { motion } from "framer-motion";
+import { Link as HeroUILink } from "@heroui/link";
+import { MongoClient, ObjectId, ServerApiVersion } from "mongodb";
+import Link from "next/link";
 import { AiOutlineSpotify } from "react-icons/ai";
+import { TbHeadphonesOff } from "react-icons/tb";
 
-export default function Spotify() {
+const client = new MongoClient(process.env.MONGODB_URI!, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+const dbName = "spotify-credentials";
+const collectionName = "tokens";
+
+type Artist = {
+  external_urls: {
+    spotify: string;
+  };
+  href: string;
+  id: string;
+  name: string;
+  type: string;
+  uri: string;
+};
+
+export default async function Spotify() {
+  const { ok } = await getCurrentPlaying();
+
   return (
     <Card className="m-4">
-      <CardHeader>
+      <CardHeader className="flex justify-between items-center">
         <div className="flex gap-2 items-center">
-          {/* <span>
-            <FaHeadphones />
-          </span> */}
-          <div className="flex gap-1 items-end">
-            {[0.2, 0.3, 0.4].map((delay, i) => (
-              <motion.div
-                key={i}
-                className="w-1 bg-foreground rounded-sm"
-                initial={{ height: 2 }}
-                animate={{ height: [2, 10, 2] }}
-                transition={{
-                  duration: 0.6,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  delay,
-                }}
-              />
-            ))}
-          </div>
+          <span className="relative flex size-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success-500 opacity-75"></span>
+            <span className="relative inline-flex size-3 rounded-full  bg-success-500"></span>
+          </span>
           <span>Currently listening to</span>
         </div>
+        {/* <HeroUILink isExternal showAnchorIcon href={"#"} className="text-sm">
+          Add this to your site
+        </HeroUILink> */}
       </CardHeader>
       <CardBody className="flex flex-row justify-between items-center">
-        <div className="flex gap-4 items-center">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-          >
-            <Avatar
-              isBordered
-              size="lg"
-              src="https://c.saavncdn.com/978/Roshni-Hi-Roshni-Hai-Unknown-2025-20250224112835-500x500.jpg"
-            />
-          </motion.div>
-          <div>
-            <h3 className="font-semibold">Roshni Hi Roshni Hai</h3>
-            <p className="text-sm">Gabbar</p>
+        {ok && (
+          <>
+            <div className="flex gap-4 items-center">
+              <Avatar
+                style={{ animation: "spin 5s linear infinite" }}
+                isBordered
+                size="lg"
+                src={ok.artURL}
+              />
+              <div>
+                <h3 className="font-semibold text-lg">{ok.trackName}</h3>
+                <p className="text-sm">{ok.artists.join(", ")}</p>
+              </div>
+            </div>
+            <div className="justify-self-end">
+              <Link target="_blank" href={ok.trackURL}>
+                <Button variant="bordered" startContent={<AiOutlineSpotify />}>
+                  Play
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
+        {ok == null && (
+          <div className="flex items-center gap-4">
+            <TbHeadphonesOff className="text-2xl" />
+            <div>
+              <p>I'm not listening to music right now.</p>
+              <p>
+                Check back later or check out my{" "}
+                <HeroUILink
+                  color="success"
+                  isExternal
+                  showAnchorIcon
+                  href="https://open.spotify.com/user/31pfrvltqlljirx7nzurjtrefe6u?si=8d35b8fa983e4441"
+                >
+                  spotify profile
+                </HeroUILink>
+                .
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="justify-self-end">
-          <Button variant="bordered" startContent={<AiOutlineSpotify />}>
-            Play
-          </Button>
-        </div>
+        )}
       </CardBody>
     </Card>
   );
+}
+
+async function getCurrentPlaying() {
+  const clientId = process.env.SPOTIFY_CLIENT_ID!;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET!;
+  const db = client.db(dbName);
+  const collection = db.collection(collectionName);
+  const documentId = process.env.DOCUMENT_ID;
+  let accessToken = null;
+
+  try {
+    await client.connect();
+    const article = await collection.findOne({
+      _id: new ObjectId(documentId),
+    });
+    accessToken = article?.access_token;
+    const refreshToken = article?.refresh_token;
+    const expiresIn = article?.expires_in;
+    const timestamp = new Date(article?.timestamp);
+
+    const currtime = new Date();
+
+    if ((currtime.getTime() - timestamp.getTime()) / 1000 >= expiresIn) {
+      console.log("Refreshing token");
+      const url = "https://accounts.spotify.com/api/token";
+
+      const payload = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: `Basic ${Buffer.from(clientId + ":" + clientSecret).toString("base64")}`,
+        },
+        body: new URLSearchParams({
+          grant_type: "refresh_token",
+          refresh_token: refreshToken,
+          client_id: clientId,
+        }),
+      };
+      const body = await fetch(url, payload);
+      const response = await body.json();
+      accessToken = response.access_token;
+      await collection.updateOne(
+        { _id: new ObjectId(documentId) },
+        {
+          $set: {
+            access_token: accessToken,
+            refresh_token: response.refesh_token,
+            timestamp: new Date(),
+            expires_in: response.expires_in,
+          },
+        }
+      );
+    }
+  } catch (err) {
+    return {
+      ok: null,
+      error: err,
+    };
+  } finally {
+    await client.close();
+    return getTrackInfo(accessToken);
+  }
+}
+
+async function getTrackInfo(accessToken: string) {
+  console.log(accessToken);
+  const url = "https://api.spotify.com/v1/me/player/currently-playing";
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    const body = await response.json();
+    const artists = body.item.artists.map((artist: Artist) => artist.name);
+    const trackURL = body.item.external_urls.spotify;
+    const trackName = body.item.name;
+    const artURL = body.item.album.images[0].url;
+
+    return {
+      ok: {
+        artists,
+        trackURL,
+        trackName,
+        artURL,
+      },
+      error: null,
+    };
+  } catch (error) {
+    return {
+      ok: null,
+      error,
+    };
+  }
 }
