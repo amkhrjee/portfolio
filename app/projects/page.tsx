@@ -1,25 +1,25 @@
 "use client";
 
-import { GoSortDesc } from "react-icons/go";
-import { LuChevronDown } from "react-icons/lu";
+import { Button } from "@heroui/button";
 import {
   Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
   DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
 } from "@heroui/dropdown";
-import { useContext, useState } from "react";
-import { Button } from "@heroui/button";
 import { motion } from "framer-motion";
+import { useContext, useState } from "react";
+import { GoSortDesc } from "react-icons/go";
+import { LuChevronDown } from "react-icons/lu";
 
 import { projects } from "./data";
 
 import Project from "@/components/project";
-import { LanguageContext } from "../context/LanguageContext";
 import { strings } from "@/config/strings";
+import { LanguageContext } from "../context/LanguageContext";
 
 export default function Page() {
-  const [sortby, setSortby] = useState<Set<string>>(new Set(["latest"]));
+  const [sortby, setSortby] = useState<Set<string>>(new Set(["popularity"]));
   const [category, setCategory] = useState<Set<string>>(new Set(["software"]));
   const language = useContext(LanguageContext);
   return (

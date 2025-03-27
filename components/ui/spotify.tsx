@@ -130,9 +130,15 @@ async function getCurrentPlaying() {
           client_id: clientId,
         }),
       };
+
+      console.log("Sending Refresh Request");
       const body = await fetch(url, payload);
+      console.log("Received Refresh Tokens");
+
       const response = await body.json();
       accessToken = response.access_token;
+
+      console.log("Saving the refresh token to DB");
 
       await collection.replaceOne(
         { _id: new ObjectId(documentId) },
@@ -143,6 +149,8 @@ async function getCurrentPlaying() {
           timestamp: new Date(),
         }
       );
+
+      console.log("Successfully refreshed token!");
     }
   } catch (err) {
     return {
