@@ -114,6 +114,20 @@ async function getCurrentPlaying() {
 
     const currtime = new Date();
 
+    console.log(
+      `Saved timestamp: ${timestamp.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`
+    );
+
+    console.log(
+      `Current timestamp: ${currtime.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}`
+    );
+
+    console.log(`Expires in: ${expiresIn} ms`);
+
+    console.log(
+      `Do I need to refresh my token? ${(currtime.getTime() - timestamp.getTime()) / 1000 >= expiresIn}`
+    );
+
     if ((currtime.getTime() - timestamp.getTime()) / 1000 >= expiresIn) {
       console.log("Refreshing token");
       const url = "https://accounts.spotify.com/api/token";
@@ -135,8 +149,12 @@ async function getCurrentPlaying() {
       const body = await fetch(url, payload);
       console.log("Received Refresh Tokens");
 
+      console.log(`Access Token Now: ${accessToken}`);
+
       const response = await body.json();
       accessToken = response.access_token;
+
+      console.log(`Access Token after Refresh: ${accessToken}`);
 
       console.log("Saving the refresh token to DB");
 
@@ -144,7 +162,7 @@ async function getCurrentPlaying() {
         { _id: new ObjectId(documentId) },
         {
           access_token: accessToken,
-          refresh_token: response.refesh_token,
+          refresh_token: response.refresh_token,
           expires_in: response.expires_in,
           timestamp: new Date(),
         }
