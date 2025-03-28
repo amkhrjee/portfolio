@@ -39,7 +39,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <div className="lg:px-28">
+    <div className="md:px-14 lg:px-64">
       <div className="p-4 flex flex-row gap-4 items-center ">
         <Image
           alt="My Photo"
