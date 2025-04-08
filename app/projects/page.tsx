@@ -24,7 +24,7 @@ export default function Page() {
   const language = useContext(LanguageContext);
   return (
     <>
-      <div className="p-4 flex justify-between items-center">
+      <div className="p-4 md:px-14 lg:px-64 flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, translateX: -20 }}
           animate={{ opacity: 1, translateX: 0 }}
@@ -88,7 +88,7 @@ export default function Page() {
         </motion.div>
       </div>
 
-      <div className="p-4 flex flex-col gap-4 md:grid grid-cols-2">
+      <div className="p-4 md:px-14 lg:px-64 flex flex-col gap-4 md:grid grid-cols-2">
         {sortby.has("latest") &&
           projects
             .filter((project) => category.has(project.category))
