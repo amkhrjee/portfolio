@@ -130,7 +130,7 @@ async function getCurrentPlaying() {
 
     if ((currtime.getTime() - timestamp.getTime()) / 1000 >= expiresIn) {
       console.log("Refreshing token");
-      const url = "https://accounts.spotify.com/api/token";
+      const url = "https://accounts.spotify.com/api/token"; // Use the actual Spotify URL
 
       const payload = {
         method: "POST",
@@ -147,28 +147,45 @@ async function getCurrentPlaying() {
 
       console.log("Sending Refresh Request");
       const body = await fetch(url, payload);
-      console.log("Received Refresh Tokens");
+      console.log("Received Refresh Response");
 
-      console.log(`Access Token Now: ${accessToken}`);
+      // Add error handling for the fetch request
+      if (!body.ok) {
+        const errorText = await body.text();
+        console.error(
+          `Error refreshing token: ${body.status} ${body.statusText}`,
+          errorText
+        );
+        return {
+          ok: null,
+          error: "Refresh response did not contain an access_token.",
+        };
+      } else {
+        const response = await body.json();
+        accessToken = response.access_token; // Update the access token
 
-      const response = await body.json();
-      accessToken = response.access_token;
+        console.log(`Access Token after Refresh: ${accessToken}`);
+        console.log("Saving the new access token and timestamp to DB");
 
-      console.log(`Access Token after Refresh: ${accessToken}`);
-
-      console.log("Saving the refresh token to DB");
-
-      await collection.replaceOne(
-        { _id: new ObjectId(documentId) },
-        {
-          access_token: accessToken,
-          refresh_token: response.refresh_token,
-          expires_in: response.expires_in,
-          timestamp: new Date(),
+        if (accessToken) {
+          await collection.replaceOne(
+            { _id: new ObjectId(documentId) },
+            {
+              access_token: accessToken,
+              refresh_token: refreshToken,
+              expires_in: response.expires_in,
+              timestamp: new Date(),
+            }
+          );
+          console.log("Successfully refreshed token!");
+        } else {
+          console.error("Refresh response did not contain an access_token.");
+          return {
+            ok: null,
+            error: "Refresh response did not contain an access_token.",
+          };
         }
-      );
-
-      console.log("Successfully refreshed token!");
+      }
     }
   } catch (err) {
     return {
