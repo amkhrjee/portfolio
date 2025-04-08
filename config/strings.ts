@@ -26,7 +26,7 @@ export const strings: Record<Language, Translation> = {
     "hero-title":
       "I'm a software engineer with an eye for design and hands-on experience with ML.",
     "hero-desc":
-      "I'm a fresh CS graduate with deep interests in web, databases, distributed systems, data and everything in-between. You can view my",
+      "I'm a fresh CS graduate with deep interests in web, databases, distributed systems, data and everything in-between. You can view and/or download my",
     "resume-label": "résumé",
     "contact-label": "Contact me",
     "view-work-label": "View my work",

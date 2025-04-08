@@ -10,22 +10,14 @@ import { HiOutlineSpeakerWave } from "react-icons/hi2";
 import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import {
-  LuClipboardList,
-  LuEye,
-  LuFilePen,
-  LuGithub,
-  LuMail,
-} from "react-icons/lu";
-import { TbBubble } from "react-icons/tb";
+import { FaBluesky, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { LuClipboardList, LuEye, LuFilePen, LuMail } from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
 import { LanguageContext } from "@/app/context/LanguageContext";
 import { Language } from "@/config/definitions";
 import { strings } from "@/config/strings";
-import { addToast } from "@heroui/toast";
 import { ReactNode, useContext, useRef } from "react";
 
 export default function HomeProvider({ children }: { children: ReactNode }) {
@@ -146,7 +138,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
                 size="lg"
                 variant="bordered"
               >
-                <LuGithub />
+                <FaGithub />
               </Button>
             </HeroTooltip>
             <HeroTooltip content="X/Twitter">
@@ -169,20 +161,18 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
                 <FaGoodreadsG />
               </Button>
             </HeroTooltip>
-            <Button
-              onPress={() => {
-                addToast({
-                  title: "Coming soon",
-                  description: "Under construction",
-                });
-              }}
-              color="warning"
-              size="lg"
-              startContent={<TbBubble />}
-              variant="bordered"
-            >
-              Thoughts
-            </Button>
+            <HeroTooltip content="Bluesky">
+              <Button
+                onPress={() =>
+                  redirect("https://bsky.app/profile/amkhrjee.bsky.social")
+                }
+                isIconOnly
+                size="lg"
+                variant="bordered"
+              >
+                <FaBluesky />
+              </Button>
+            </HeroTooltip>
           </div>
           <br />
           <p>{strings[language]["outro-desc"]}</p>

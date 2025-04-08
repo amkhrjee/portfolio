@@ -45,29 +45,37 @@ export default async function Spotify() {
           Add this to your site
         </HeroUILink> */}
       </CardHeader>
-      <CardBody className="flex flex-row justify-between items-center">
+      <CardBody>
         {ok && (
-          <>
+          <div className="flex justify-between items-center">
             <div className="flex gap-4 items-center">
               <Avatar
                 style={{ animation: "spin 5s linear infinite" }}
                 isBordered
                 size="lg"
-                src={ok.artURL}
+                // src={ok.artURL}
+                src={"https://avatars.githubusercontent.com/u/50242721?v=4"}
               />
               <div>
-                <h3 className="font-semibold text-lg">{ok.trackName}</h3>
-                <p className="text-sm">{ok.artists.join(", ")}</p>
+                <h3 className="font-semibold text-lg max-w-36 truncate">
+                  {ok.trackName}
+                </h3>
+
+                {/* <p className="text-sm"></p> */}
+                <p className="text-sm max-w-36 truncate">
+                  {ok.artists.join(", ")}
+                </p>
               </div>
             </div>
             <div className="justify-self-end">
-              <Link target="_blank" href={ok.trackURL}>
+              {/* <Link target="_blank" href={ok.trackURL}> */}
+              <Link target="_blank" href="">
                 <Button variant="bordered" startContent={<AiOutlineSpotify />}>
                   Play
                 </Button>
               </Link>
             </div>
-          </>
+          </div>
         )}
         {ok == null && (
           <div className="flex items-center gap-4">
