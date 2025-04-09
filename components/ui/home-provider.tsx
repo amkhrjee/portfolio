@@ -191,7 +191,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
               size="lg"
               startContent={<LuClipboardList />}
               variant="bordered"
-              onPress={() => redirect("/resources")}
+              onPress={() => redirect("https://resources.amkhrjee.xyz/")}
             >
               Resources
             </Button>
