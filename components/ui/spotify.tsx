@@ -41,9 +41,6 @@ export default async function Spotify() {
           </span>
           <span>Currently listening to</span>
         </div>
-        {/* <HeroUILink isExternal showAnchorIcon href={"#"} className="text-sm">
-          Add this to your site
-        </HeroUILink> */}
       </CardHeader>
       <CardBody>
         {ok && (
@@ -53,8 +50,7 @@ export default async function Spotify() {
                 style={{ animation: "spin 5s linear infinite" }}
                 isBordered
                 size="lg"
-                // src={ok.artURL}
-                src={"https://avatars.githubusercontent.com/u/50242721?v=4"}
+                src={ok.artURL}
               />
               <div>
                 <h3 className="font-semibold text-lg max-w-36 truncate">
