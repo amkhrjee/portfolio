@@ -53,12 +53,12 @@ export default async function Spotify() {
                 src={ok.artURL}
               />
               <div>
-                <h3 className="font-semibold text-lg max-w-36 truncate">
+                <h3 className="font-semibold text-lg max-w-36 truncate md:max-w-full">
                   {ok.trackName}
                 </h3>
 
                 {/* <p className="text-sm"></p> */}
-                <p className="text-sm max-w-36 truncate">
+                <p className="text-sm max-w-36 truncate md:max-w-full">
                   {ok.artists.join(", ")}
                 </p>
               </div>

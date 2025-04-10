@@ -180,7 +180,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
 
           <div className="flex flex-row gap-2 justify-start">
             <Button
-              onPress={() => redirect("https://amukhrjee.substack.com/")}
+              onPress={() => redirect("/blog")}
               size="lg"
               startContent={<LuFilePen />}
               variant="bordered"
