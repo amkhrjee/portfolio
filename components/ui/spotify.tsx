@@ -64,8 +64,7 @@ export default async function Spotify() {
               </div>
             </div>
             <div className="justify-self-end">
-              {/* <Link target="_blank" href={ok.trackURL}> */}
-              <Link target="_blank" href="">
+              <Link target="_blank" href={ok.trackURL}>
                 <Button variant="bordered" startContent={<AiOutlineSpotify />}>
                   Play
                 </Button>
