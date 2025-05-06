@@ -43,7 +43,7 @@ export const projects = [
     ],
     link: "https://fontonic.amkhrjee.xyz/",
     tags: ["chrome", "firefox", "extension", "typescript"],
-    users: 3000,
+    users: 4000,
     date: "2024-02",
     category: "software",
   },
