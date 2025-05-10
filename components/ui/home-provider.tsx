@@ -36,7 +36,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         <Image
           alt="My Photo"
           className="rounded-2xl"
-          src="/potrait.png"
+          src="/focusing.png"
           width={120}
         />
         <motion.div
