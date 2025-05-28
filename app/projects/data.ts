@@ -41,7 +41,7 @@ export const projects = [
       "Browser extension for changing typography of any website. Written in Typescript, styled with DaisyUI. No frameworks used. Cross-browser compatible.",
       "যেকোনো ওয়েবসাইটের টাইপোগ্রাফি পরিবর্তনের জন্য ব্রাউজার এক্সটেনশন। টাইপস্ক্রিপ্টে লেখা এবং ডেইজি ইউআই দিয়ে স্টাইল করা হয়েছে। কোনো ফ্রেমওয়ার্ক ব্যবহার করা হয়নি। ক্রস-ব্রাউজার সামঞ্জস্যপূর্ণ।",
     ],
-    link: "https://fontonic.amkhrjee.xyz/",
+    link: "https://fontonic.amkhrjee.in/",
     tags: ["chrome", "firefox", "extension", "typescript"],
     users: 4000,
     date: "2024-02",
