@@ -36,7 +36,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         <Image
           alt="My Photo"
           className="rounded-2xl"
-          src="/focusing.png"
+          src="/potrait.jpg"
           width={120}
         />
         <motion.div
@@ -191,7 +191,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
               size="lg"
               startContent={<LuClipboardList />}
               variant="bordered"
-              onPress={() => redirect("https://resources.amkhrjee.xyz/")}
+              onPress={() => redirect("https://resources.amkhrjee.in//")}
             >
               Resources
             </Button>
