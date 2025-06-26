@@ -11,7 +11,13 @@ import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaBluesky, FaGithub, FaXTwitter } from "react-icons/fa6";
-import { LuClipboardList, LuEye, LuFilePen, LuMail } from "react-icons/lu";
+import {
+  LuClipboardList,
+  LuEye,
+  LuFilePen,
+  LuMail,
+  LuSparkles,
+} from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
@@ -31,7 +37,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <div className="md:px-14 lg:px-64">
+    <div className="md:px-14 lg:px-96">
       <div className="p-4 flex flex-row gap-4 items-center ">
         <Image
           alt="My Photo"
@@ -92,22 +98,19 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         transition={{ delay: 0.5 }}
         className="p-4 flex flex-row gap-4"
       >
-        <Button
-          color="success"
-          startContent={<LuMail />}
-          variant="bordered"
-          onPress={() => (window.location.href = "mailto:amkhrjee@gmail.com")}
-        >
-          {strings[language]["contact-label"]}
-        </Button>
-        <Button
-          color="default"
-          startContent={<LuEye />}
-          variant="bordered"
-          onPress={() => redirect("/projects")}
-        >
-          {strings[language]["view-work-label"]}
-        </Button>
+        <Link href="mailto:amkhrjee@gmail.com">
+          <Button color="success" startContent={<LuMail />} variant="bordered">
+            {strings[language]["contact-label"]}
+          </Button>
+        </Link>
+        <Link href="/projects">
+          <Button color="default" startContent={<LuEye />} variant="bordered">
+            {strings[language]["view-work-label"]}
+          </Button>
+        </Link>
+        <Link target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
+          <Button startContent={<LuSparkles />}>Chat with my AI-clone</Button>
+        </Link>
       </motion.div>
       <Divider />
       <motion.div

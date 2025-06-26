@@ -9,7 +9,7 @@ import {
   NavbarItem,
 } from "@heroui/navbar";
 import Link from "next/link";
-import { LuLanguages, LuMoon, LuSparkles, LuSunMedium } from "react-icons/lu";
+import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
 
 import { LanguageContext } from "@/app/context/LanguageContext";
 import { SetLanguageContext } from "@/app/context/SetLanguageContext";
@@ -23,7 +23,7 @@ export const Navbar = () => {
   const setLanguage = useContext(SetLanguageContext);
 
   return (
-    <HeroUINavbar>
+    <HeroUINavbar className="md:px-14 lg:px-96">
       <NavbarBrand>
         <motion.div
           initial={{ opacity: 0, translateX: -20 }}
@@ -53,11 +53,6 @@ export const Navbar = () => {
             </Button>
           </NavbarItem>
           <NavbarItem>
-            <Link target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
-            <Button startContent={<LuSparkles />}>
-              Chat with AI-clone
-            </Button>
-            </Link>
             <Button
               onPress={() =>
                 theme == "light" ? setTheme("dark") : setTheme("light")
