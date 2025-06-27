@@ -96,18 +96,24 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         initial={{ opacity: 0, translateX: -40 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ delay: 0.5 }}
-        className="p-4 flex flex-row gap-4"
+        className="p-4 flex flex-col md:flex-row gap-4"
       >
-        <Link href="mailto:amkhrjee@gmail.com">
-          <Button color="success" startContent={<LuMail />} variant="bordered">
-            {strings[language]["contact-label"]}
-          </Button>
-        </Link>
-        <Link href="/projects">
-          <Button color="default" startContent={<LuEye />} variant="bordered">
-            {strings[language]["view-work-label"]}
-          </Button>
-        </Link>
+        <div className="flex flex-row gap-4">
+          <Link href="mailto:amkhrjee@gmail.com">
+            <Button
+              color="success"
+              startContent={<LuMail />}
+              variant="bordered"
+            >
+              {strings[language]["contact-label"]}
+            </Button>
+          </Link>
+          <Link href="/projects">
+            <Button color="default" startContent={<LuEye />} variant="bordered">
+              {strings[language]["view-work-label"]}
+            </Button>
+          </Link>
+        </div>
         <Link target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
           <Button startContent={<LuSparkles />}>Chat with my AI-clone</Button>
         </Link>
