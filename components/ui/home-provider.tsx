@@ -99,7 +99,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         className="p-4 flex flex-col md:flex-row gap-4"
       >
         <div className="flex flex-row gap-4">
-          <Link href="mailto:amkhrjee@gmail.com">
+          <a href="mailto:amkhrjee@gmail.com">
             <Button
               color="success"
               startContent={<LuMail />}
@@ -107,16 +107,16 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
             >
               {strings[language]["contact-label"]}
             </Button>
-          </Link>
-          <Link href="/projects">
+          </a>
+          <a href="/projects">
             <Button color="default" startContent={<LuEye />} variant="bordered">
               {strings[language]["view-work-label"]}
             </Button>
-          </Link>
+          </a>
         </div>
-        <Link target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
+        <a target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
           <Button startContent={<LuSparkles />}>Chat with my AI-clone</Button>
-        </Link>
+        </a>
       </motion.div>
       <Divider />
       <motion.div
