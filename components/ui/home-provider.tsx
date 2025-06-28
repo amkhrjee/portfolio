@@ -123,7 +123,9 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
           target="_blank"
           href={"https://ai-aniruddha.streamlit.app/"}
           startContent={<LuSparkles />}
-        ></Button>
+        >
+          Chat with my AI clone
+        </Button>
       </motion.div>
       <Divider />
       <motion.div
