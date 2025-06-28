@@ -220,7 +220,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         {children}
         <br />
         <div className="p-4 bottom-0">
-          <p>© Aniruddha Mukherjee, 2025</p>
+          <p>© Aniruddha Mukherjee, {new Date().getFullYear()}</p>
         </div>
       </motion.div>
     </div>
