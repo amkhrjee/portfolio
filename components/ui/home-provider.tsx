@@ -198,7 +198,8 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
 
           <div className="flex flex-row gap-2 justify-start">
             <Button
-              onPress={() => redirect("/blog")}
+              as={Link}
+              href="/blog"
               size="lg"
               startContent={<LuFilePen />}
               variant="bordered"
@@ -206,10 +207,11 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
               Blog
             </Button>
             <Button
+              as={Link}
+              href="https://resources.amkhrjee.in/"
               size="lg"
               startContent={<LuClipboardList />}
               variant="bordered"
-              onPress={() => redirect("https://resources.amkhrjee.in//")}
             >
               Resources
             </Button>
