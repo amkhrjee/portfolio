@@ -99,24 +99,31 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         className="p-4 flex flex-col md:flex-row gap-4"
       >
         <div className="flex flex-row gap-4">
-          <a href="mailto:amkhrjee@gmail.com">
-            <Button
-              color="success"
-              startContent={<LuMail />}
-              variant="bordered"
-            >
-              {strings[language]["contact-label"]}
-            </Button>
-          </a>
-          <a href="/projects">
-            <Button color="default" startContent={<LuEye />} variant="bordered">
-              {strings[language]["view-work-label"]}
-            </Button>
-          </a>
+          <Button
+            as={Link}
+            href="mailto:amkhrjee@gmail.com"
+            color="success"
+            startContent={<LuMail />}
+            variant="bordered"
+          >
+            {strings[language]["contact-label"]}
+          </Button>
+          <Button
+            as={Link}
+            href="/projects"
+            color="default"
+            startContent={<LuEye />}
+            variant="bordered"
+          >
+            {strings[language]["view-work-label"]}
+          </Button>
         </div>
-        <a target="_blank" href={"https://ai-aniruddha.streamlit.app/"}>
-          <Button startContent={<LuSparkles />}>Chat with my AI-clone</Button>
-        </a>
+        <Button
+          as={Link}
+          target="_blank"
+          href={"https://ai-aniruddha.streamlit.app/"}
+          startContent={<LuSparkles />}
+        ></Button>
       </motion.div>
       <Divider />
       <motion.div
@@ -142,7 +149,8 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
             </HeroTooltip>
             <HeroTooltip content="GitHub">
               <Button
-                onPress={() => redirect("https://github.com/amkhrjee")}
+                as={Link}
+                href="https://github.com/amkhrjee"
                 isIconOnly
                 size="lg"
                 variant="bordered"
@@ -152,7 +160,8 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
             </HeroTooltip>
             <HeroTooltip content="X/Twitter">
               <Button
-                onPress={() => redirect("https://x.com/amkhrjee")}
+                as={Link}
+                href="https://x.com/amkhrjee"
                 isIconOnly
                 size="lg"
                 variant="bordered"
@@ -162,7 +171,8 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
             </HeroTooltip>
             <HeroTooltip content="Goodreads">
               <Button
-                onPress={() => redirect("https://goodreads.com/amkhrjee")}
+                as={Link}
+                href="https://goodreads.com/amkhrjee"
                 isIconOnly
                 size="lg"
                 variant="bordered"
@@ -172,9 +182,8 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
             </HeroTooltip>
             <HeroTooltip content="Bluesky">
               <Button
-                onPress={() =>
-                  redirect("https://bsky.app/profile/amkhrjee.bsky.social")
-                }
+                as={Link}
+                href="https://bsky.app/profile/amkhrjee.bsky.social"
                 isIconOnly
                 size="lg"
                 variant="bordered"
