@@ -32,7 +32,7 @@ export const strings: Record<Language, Translation> = {
     "view-work-label": "View my work",
     "connect-with-me-title": "Connect with me",
     "outro-desc":
-      "Although extremely irregular, I try to write a blog post every once in a while. I also maintain a collection of helpful learning resources.",
+      " I maintain a collection of helpful learning resources listing books and online lectures for varius topics.",
     "software-engg-label": "Software Engineering",
     "sort-by": "Sort by",
     "machine-learning-label": "Machine Learning",

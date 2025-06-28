@@ -11,13 +11,7 @@ import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaBluesky, FaGithub, FaXTwitter } from "react-icons/fa6";
-import {
-  LuClipboardList,
-  LuEye,
-  LuFilePen,
-  LuMail,
-  LuSparkles,
-} from "react-icons/lu";
+import { LuClipboardList, LuEye, LuMail, LuSparkles } from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
@@ -120,6 +114,9 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         </div>
         <Button
           as={Link}
+          className="w-min"
+          variant="shadow"
+          color="primary"
           target="_blank"
           href={"https://ai-aniruddha.streamlit.app/"}
           startContent={<LuSparkles />}
@@ -199,7 +196,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
           <br />
 
           <div className="flex flex-row gap-2 justify-start">
-            <Button
+            {/* <Button
               as={Link}
               href="/blog"
               size="lg"
@@ -207,7 +204,7 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
               variant="bordered"
             >
               Blog
-            </Button>
+            </Button> */}
             <Button
               as={Link}
               href="https://resources.amkhrjee.in/"
