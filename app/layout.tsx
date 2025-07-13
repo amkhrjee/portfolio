@@ -14,8 +14,47 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: 'portfolio, web development, software engineering, personal website, developer portfolio',
+  authors: [{ name: 'Aniruddha Mukherjee', url: 'https://amkhrjee.com' }],
+  creator: 'Aniruddha Mukherjee',
+  publisher: 'Aniruddha Mukherjee',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://amkhrjee.com',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: ['/og-image.jpg'],
+    creator: '@amkhrjee',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
