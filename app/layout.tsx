@@ -9,25 +9,27 @@ import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amkhrjee.in"),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: 'portfolio, web development, software engineering, personal website, developer portfolio',
-  authors: [{ name: 'Aniruddha Mukherjee', url: 'https://amkhrjee.com' }],
-  creator: 'Aniruddha Mukherjee',
-  publisher: 'Aniruddha Mukherjee',
+  keywords:
+    "portfolio, web development, software engineering, personal website, developer portfolio",
+  authors: [{ name: "Aniruddha Mukherjee", url: "https://amkhrjee.in" }],
+  creator: "Aniruddha Mukherjee",
+  publisher: "Aniruddha Mukherjee",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://amkhrjee.com',
+    type: "website",
+    locale: "en_US",
+    url: "https://amkhrjee.in",
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
       {
-        url: '/og-image.jpg',
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -35,11 +37,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ['/og-image.jpg'],
-    creator: '@amkhrjee',
+    images: ["/og-image.jpg"],
+    creator: "@amkhrjee",
   },
   robots: {
     index: true,
@@ -47,14 +49,14 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
