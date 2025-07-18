@@ -26,13 +26,13 @@ export const strings: Record<Language, Translation> = {
     "hero-title":
       "I'm a computer engineer with an eye for design and hands-on experience with building ML systems.",
     "hero-desc":
-      "I'm a fresh CS graduate  with deep interests in systems, databases, data and everything in-between. You can view and/or download my",
+      "I'm a postgrad student at IIT Bombay by day, hacker by night. I have interests in systems, data and everything in-between.",
     "resume-label": "résumé",
     "contact-label": "Contact me",
     "view-work-label": "View my work",
     "connect-with-me-title": "Connect with me",
     "outro-desc":
-      " I maintain a collection of helpful learning resources listing books and online lectures for varius topics.",
+      " I maintain a collection of helpful learning resources listing books and online lectures for varius topics. I also have a blog where I post my ramblings on tech, life and travel.",
     "software-engg-label": "Software Engineering",
     "sort-by": "Sort by",
     "machine-learning-label": "Machine Learning",

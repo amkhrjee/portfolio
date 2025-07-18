@@ -11,7 +11,13 @@ import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaBluesky, FaGithub, FaXTwitter } from "react-icons/fa6";
-import { LuClipboardList, LuEye, LuMail, LuSparkles } from "react-icons/lu";
+import {
+  LuClipboardList,
+  LuEye,
+  LuFilePen,
+  LuMail,
+  LuSparkles,
+} from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
@@ -75,15 +81,15 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
         <br />
         <p>
           {strings[language]["hero-desc"]}{" "}
-          <Link
+          {/* <Link
             target="_blank"
             isExternal
             showAnchorIcon
             href="https://drive.google.com/file/d/1NOtS3oVLpQQdmEpaFtWOe7dqBj34d1yF/view?usp=sharing"
           >
             <u>{strings[language]["resume-label"]}</u>
-          </Link>
-          {language === Language.en ? "." : ""}
+          </Link> */}
+          {/* {language === Language.en ? "." : ""} */}
         </p>
       </motion.div>
       <motion.div
@@ -196,21 +202,21 @@ export default function HomeProvider({ children }: { children: ReactNode }) {
           <br />
 
           <div className="flex flex-row gap-2 justify-start">
-            {/* <Button
+            <Button
               as={Link}
-              href="/blog"
+              href="https://blog.amkhrjee.in"
               size="lg"
               startContent={<LuFilePen />}
-              variant="bordered"
+              variant="faded"
             >
               Blog
-            </Button> */}
+            </Button>
             <Button
               as={Link}
               href="https://resources.amkhrjee.in/"
               size="lg"
               startContent={<LuClipboardList />}
-              variant="bordered"
+              variant="faded"
             >
               Resources
             </Button>
