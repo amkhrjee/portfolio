@@ -2,7 +2,6 @@ import { LanguageContext } from "@/app/context/LanguageContext";
 import { fontSans } from "@/config/fonts";
 import { strings } from "@/config/strings";
 import { Card, CardBody, CardHeader } from "@heroui/card";
-import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
 import { Link } from "@heroui/link";
 import { useContext } from "react";
@@ -38,11 +37,11 @@ export default function Project(props: {
             ""
           )}
         </div>
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           {props.tags.map((tag) => (
             <Chip key={tag}>{tag}</Chip>
           ))}
-        </div>
+        </div> */}
       </CardHeader>
       <Divider />
       <CardBody>

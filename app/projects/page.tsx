@@ -62,7 +62,6 @@ export default function Page() {
           <Dropdown>
             <DropdownTrigger>
               <Button startContent={<GoSortDesc />} variant="flat">
-                {strings[language]["sort-by"]}:{" "}
                 {Array.from(sortby).join("") === "latest"
                   ? strings[language]["latest"]
                   : strings[language]["popularity"]}
