@@ -61,8 +61,8 @@ export default function About() {
       >
         <p>
           I like to make cool stuff with computers and math. I'm currently a
-          grad student at IIT Bombay in the Biosciences and Bioengineeing
-          department. I did my undergrad in Computer Science from Tezpur
+          grad student at IIT Bombay in the Biosciences and Bioengineering
+          department. I did my undergrad in Computer Science at Tezpur
           University.
         </p>
         <br />
