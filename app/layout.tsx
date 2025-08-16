@@ -1,11 +1,9 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 
-import { Providers } from "./providers";
+import Providers from "./providers";
 
-import { Navbar } from "@/components/navbar";
-import Background from "@/components/ui/background";
-import { fontSans } from "@/config/fonts";
+import Navbar from "@/components/navbar";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -81,12 +79,16 @@ export default function RootLayout({
         async
       ></script>
       <body
-        className={`min-h-screen bg-background ${fontSans.className} antialiased`}
+        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers
+          themeProps={{
+            attribute: "class",
+            enableSystem: true,
+          }}
+        >
           <Navbar />
           <div className="relative z-10">{children}</div>
-          <Background />
         </Providers>
       </body>
     </html>

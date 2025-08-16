@@ -2,70 +2,48 @@
 import { motion } from "framer-motion";
 
 import { Button } from "@heroui/button";
-import {
-  Navbar as HeroUINavbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@heroui/navbar";
-import Link from "next/link";
-import { LuLanguages, LuMoon, LuSunMedium } from "react-icons/lu";
+import { LuMoon, LuSunMedium } from "react-icons/lu";
 
-import { LanguageContext } from "@/app/context/LanguageContext";
-import { SetLanguageContext } from "@/app/context/SetLanguageContext";
-import { Language } from "@/config/definitions";
 import { useTheme } from "next-themes";
-import { useContext } from "react";
+import Link from "next/link";
+import { FaHeart } from "react-icons/fa6";
 
-export const Navbar = () => {
+export default function Navbar() {
   const { theme, setTheme } = useTheme();
-  const language = useContext(LanguageContext);
-  const setLanguage = useContext(SetLanguageContext);
 
   return (
-    <HeroUINavbar className="md:px-14 lg:px-96">
-      <NavbarBrand>
-        <motion.div
-          initial={{ opacity: 0, translateX: -20 }}
-          animate={{ opacity: 1, translateX: 0 }}
-        >
-          <Link className="font-semibold text-xl" href="/">
-            Aniruddha.
-          </Link>
-        </motion.div>
-      </NavbarBrand>
+    <div className="w-full flex pt-4 justify-between">
       <motion.div
+        initial={{ opacity: 0, translateX: -20 }}
+        animate={{ opacity: 1, translateX: 0 }}
+      >
+        <Link className="font-semibold text-xl font-mono" href="/">
+          @amkhrjee
+        </Link>
+      </motion.div>
+      <motion.div
+        className="flex gap-2"
         initial={{ opacity: 0, translateX: 20 }}
         animate={{ opacity: 1, translateX: 0 }}
       >
-        <NavbarContent justify="end">
-          <NavbarItem>
-            <Button
-              startContent={<LuLanguages />}
-              variant="ghost"
-              onPress={() =>
-                setLanguage!(
-                  language === Language.en ? Language.bn : Language.en
-                )
-              }
-            >
-              {language === Language.en ? "বাংলা" : "English"}
-            </Button>
-          </NavbarItem>
-          <NavbarItem>
-            <Button
-              onPress={() =>
-                theme == "light" ? setTheme("dark") : setTheme("light")
-              }
-              isIconOnly
-              aria-label="Theme Change"
-              variant="light"
-            >
-              {theme == "light" ? <LuMoon /> : <LuSunMedium />}
-            </Button>
-          </NavbarItem>
-        </NavbarContent>
+        <Link
+          href={
+            "https://www.paypal.com/paypalme/amkhrjee?country.x=IN&locale.x=en_GB"
+          }
+        >
+          <Button startContent={<FaHeart color="red" />}>Support</Button>
+        </Link>
+        <Button
+          onPress={() =>
+            theme == "light" ? setTheme("dark") : setTheme("light")
+          }
+          isIconOnly
+          aria-label="Theme Change"
+          variant="light"
+        >
+          {theme == "light" ? <LuMoon /> : <LuSunMedium />}
+        </Button>
       </motion.div>
-    </HeroUINavbar>
+    </div>
   );
-};
+}
