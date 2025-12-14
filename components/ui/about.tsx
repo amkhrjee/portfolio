@@ -1,6 +1,5 @@
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
-import { Tooltip as HeroTooltip } from "@heroui/tooltip";
 import { Link } from "@heroui/link";
 import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -76,49 +75,42 @@ export default function About() {
       <div className="pt-4">
         <br />
         <div className="flex flex-row gap-2 justify-start">
-          <HeroTooltip content="Linkedin">
-            <Button
-              onPress={() => redirect("https://www.linkedin.com/in/amkhrjee/")}
-              isIconOnly
-              size="lg"
-              variant="bordered"
-            >
-              <FaLinkedinIn />
-            </Button>
-          </HeroTooltip>
-          <HeroTooltip content="GitHub">
-            <Button
-              as={Link}
-              href="https://github.com/amkhrjee"
-              isIconOnly
-              size="lg"
-              variant="bordered"
-            >
-              <FaGithub />
-            </Button>
-          </HeroTooltip>
-          <HeroTooltip content="X/Twitter">
-            <Button
-              as={Link}
-              href="https://x.com/amkhrjee"
-              isIconOnly
-              size="lg"
-              variant="bordered"
-            >
-              <FaXTwitter />
-            </Button>
-          </HeroTooltip>
-          <HeroTooltip content="Goodreads">
-            <Button
-              as={Link}
-              href="https://goodreads.com/amkhrjee"
-              isIconOnly
-              size="lg"
-              variant="bordered"
-            >
-              <FaGoodreadsG />
-            </Button>
-          </HeroTooltip>
+          <Button
+            as={Link}
+            href="https://www.linkedin.com/in/amkhrjee/"
+            isIconOnly
+            size="lg"
+            variant="bordered"
+          >
+            <FaLinkedinIn />
+          </Button>
+          <Button
+            as={Link}
+            href="https://github.com/amkhrjee"
+            isIconOnly
+            size="lg"
+            variant="bordered"
+          >
+            <FaGithub />
+          </Button>
+          <Button
+            as={Link}
+            href="https://x.com/amkhrjee"
+            isIconOnly
+            size="lg"
+            variant="bordered"
+          >
+            <FaXTwitter />
+          </Button>
+          <Button
+            as={Link}
+            href="https://goodreads.com/amkhrjee"
+            isIconOnly
+            size="lg"
+            variant="bordered"
+          >
+            <FaGoodreadsG />
+          </Button>
         </div>
         <br />
         <p>
