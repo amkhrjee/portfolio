@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 
 import { Button } from "@heroui/button";
 import { LuMoon, LuSunMedium } from "react-icons/lu";
@@ -13,19 +12,10 @@ export default function Navbar() {
 
   return (
     <div className="w-full flex pt-4 justify-between">
-      <motion.div
-        initial={{ opacity: 0, translateX: -20 }}
-        animate={{ opacity: 1, translateX: 0 }}
-      >
-        <Link className="font-semibold text-xl font-mono" href="/">
-          @amkhrjee
-        </Link>
-      </motion.div>
-      <motion.div
-        className="flex gap-2"
-        initial={{ opacity: 0, translateX: 20 }}
-        animate={{ opacity: 1, translateX: 0 }}
-      >
+      <Link className="font-semibold text-xl font-mono" href="/">
+        অনিরুদ্ধ
+      </Link>
+      <div className="flex gap-2">
         <Link
           href={
             "https://www.paypal.com/paypalme/amkhrjee?country.x=IN&locale.x=en_GB"
@@ -43,7 +33,7 @@ export default function Navbar() {
         >
           {theme == "light" ? <LuMoon /> : <LuSunMedium />}
         </Button>
-      </motion.div>
+      </div>
     </div>
   );
 }

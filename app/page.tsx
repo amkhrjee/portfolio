@@ -1,7 +1,5 @@
-"use client";
 import About from "@/components/ui/about";
 import ProjectTablet from "@/components/ui/project-tablet";
-import { motion } from "framer-motion";
 
 type Project = {
   link: string;
@@ -58,27 +56,21 @@ export default function Home() {
     <div className="flex flex-col md:flex-row gap-4">
       <About />
       <div className="flex-1">
-        <motion.div
-          initial={{ opacity: 0, translateY: 40 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 0.15 }}
-        >
-          <div>
-            <h1 className="text-xl font-semibold">Stuff I've made</h1>
-            <p>in no particular order</p>
-          </div>
-          <div className="py-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-            {projects.map((project) => (
-              <ProjectTablet
-                key={project.title}
-                link={project.link}
-                title={project.title}
-                shortDescription={project.shortDescription}
-              />
-            ))}
-            <ProjectTablet isLast />
-          </div>
-        </motion.div>
+        <div>
+          <h1 className="text-xl font-semibold">Stuff I've made</h1>
+          <p>in no particular order</p>
+        </div>
+        <div className="py-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+          {projects.map((project) => (
+            <ProjectTablet
+              key={project.title}
+              link={project.link}
+              title={project.title}
+              shortDescription={project.shortDescription}
+            />
+          ))}
+          <ProjectTablet isLast />
+        </div>
       </div>
     </div>
   );
