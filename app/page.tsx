@@ -13,7 +13,7 @@ export default function Home() {
       link: "https://fontonic.amkhrjee.in",
       title: "Fontonic",
       shortDescription:
-        "Browser extension with 6000+ daily active users. Written in TypeScript.",
+        "Browser extension with 10,000+ daily active users. Written in TypeScript.",
     },
     {
       link: "https://github.com/amkhrjee/tinypy",
@@ -25,7 +25,7 @@ export default function Home() {
       link: "/",
       title: "Lipika",
       shortDescription:
-        "GPT-2 based LLM written from scratch and pre-trained in Assamese on RTX 4090 for 70 hours.",
+        "GPT-2 based LLM developed from scratch and pre-trained in Assamese at Tezpur University.",
     },
     {
       link: "https://ai-aniruddha.streamlit.app",
@@ -49,7 +49,7 @@ export default function Home() {
       link: "https://github.com/amkhrje/ocwd",
       title: "ocwd",
       shortDescription:
-        "Scraper and bulk-downloaded for MIT courses. Written in shell scripts. 700+ downloads on PSGallery.",
+        "Scraper and bulk-downloaded for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
     },
   ];
   return (

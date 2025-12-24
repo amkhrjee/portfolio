@@ -42,9 +42,9 @@ export default function About() {
         </p>
         <br />
         <p>
-          My current interests are computer vision, AI for science, brain
-          computer interface and systems programming. Feel free to reach out via
-          any of the below mentioned channels.
+          My current interests include computer vision, AI for science,
+          brain–computer interfaces, and systems programming. Feel free to reach
+          out through any of the channels listed below.
         </p>
       </div>
       <div className="pt-4 flex gap-4">

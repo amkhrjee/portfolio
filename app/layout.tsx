@@ -5,6 +5,12 @@ import Providers from "./providers";
 
 import Navbar from "@/components/navbar";
 import { siteConfig } from "@/config/site";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amkhrjee.in"),
@@ -18,22 +24,22 @@ export const metadata: Metadata = {
   authors: [{ name: "Aniruddha Mukherjee", url: "https://amkhrjee.in" }],
   creator: "Aniruddha Mukherjee",
   publisher: "Aniruddha Mukherjee",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://amkhrjee.in",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
+  // openGraph: {
+  //   type: "website",
+  //   locale: "en_US",
+  //   url: "https://amkhrjee.in",
+  //   title: siteConfig.name,
+  //   description: siteConfig.description,
+  //   siteName: siteConfig.name,
+  //   images: [
+  //     {
+  //       url: "/og-image.jpg",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: siteConfig.name,
+  //     },
+  //   ],
+  // },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -73,13 +79,8 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <script
-        src="https://beamanalytics.b-cdn.net/beam.min.js"
-        data-token="2471c6fc-54eb-449d-bf40-814496412f30"
-        async
-      ></script>
       <body
-        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
+        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14 ${sourceSans3.className}`}
       >
         <Providers
           themeProps={{
