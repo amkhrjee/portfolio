@@ -46,7 +46,7 @@ export default function Home() {
         "Parser and scraper for Wikipedia written in Rust. Heavily utilizes multi-threading.",
     },
     {
-      link: "https://github.com/amkhrje/ocwd",
+      link: "https://github.com/amkhrjee/ocwd",
       title: "ocwd",
       shortDescription:
         "Scraper and bulk-downloaded for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
