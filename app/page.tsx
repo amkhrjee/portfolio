@@ -13,7 +13,7 @@ export default function Home() {
       link: "https://fontonic.amkhrjee.in",
       title: "Fontonic",
       shortDescription:
-        "Browser extension with 10,000+ daily active users. Written in TypeScript.",
+        "Browser extension with 12,000+ daily active users. Written in TypeScript.",
     },
     {
       link: "https://github.com/amkhrjee/tinypy",
@@ -49,7 +49,7 @@ export default function Home() {
       link: "https://github.com/amkhrjee/ocwd",
       title: "ocwd",
       shortDescription:
-        "Scraper and bulk-downloaded for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
+        "Scraper and bulk-downloader for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
     },
   ];
   return (

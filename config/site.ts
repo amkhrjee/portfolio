@@ -2,8 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Aniruddha Mukherjee",
-  description:
-    "Personal website and portfolio of Aniruddha Mukherjee - Software Engineer and Web Developer. Explore my projects, blog, and resources.",
+  description: "Personal website and portfolio of Aniruddha Mukherjee.",
   navItems: [
     {
       label: "Home",
