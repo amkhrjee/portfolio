@@ -1,15 +1,14 @@
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import { Link } from "@heroui/link";
-import { redirect } from "next/navigation";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import {
   LuClipboardList,
   LuFile,
   LuMail,
-  LuSparkles,
   LuMapPin,
+  LuSparkles,
 } from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
@@ -35,16 +34,27 @@ export default function About() {
       </div>
       <div className="pt-4">
         <p>
-          I like to make cool stuff with computers and math. I'm currently a
-          grad student at IIT Bombay working at the intersection of computer
-          science and biology. I did my undergrad in Computer Science at Tezpur
-          University.
+          I am a master's student at{" "}
+          <Link underline="hover" href="https://www.iitb.ac.in/">
+            IIT Bombay
+          </Link>
+          , working at the intersection of computer science and biology with{" "}
+          <Link underline="hover" href="https://saketlab.in/">
+            Prof. Saket Choudhary
+          </Link>
+          . I completed my bachelor's in computer science and engineering at{" "}
+          <Link underline="hover" href="https://www.tezu.ernet.in/">
+            Tezpur University
+          </Link>
+          .
         </p>
         <br />
         <p>
-          My current interests include computer vision, AI for science,
-          brain–computer interfaces, and systems programming. Feel free to reach
-          out through any of the channels listed below.
+          My current interests lie in applying artificial intelligence and
+          data-driven methods to decode gene regulation and other complex
+          biological systems. Outside of research, I enjoy recreational
+          programming, hiking, and reading science fiction, history and
+          sometimes, philosophy.
         </p>
       </div>
       <div className="pt-4 flex gap-4">
@@ -52,9 +62,9 @@ export default function About() {
           <Button
             as={Link}
             href="mailto:amkhrjee@gmail.com"
-            color="success"
+            color="secondary"
             startContent={<LuMail />}
-            variant="bordered"
+            variant="shadow"
           >
             Email me
           </Button>
