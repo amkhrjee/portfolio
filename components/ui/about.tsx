@@ -50,11 +50,8 @@ export default function About() {
         </p>
         <br />
         <p>
-          My current interests lie in applying artificial intelligence and
-          data-driven methods to decode gene regulation and other complex
-          biological systems. Outside of research, I enjoy recreational
-          programming, hiking, and reading science fiction, history and
-          sometimes, philosophy.
+          Outside the lab, I write code for fun, hike, and read across science
+          fiction, history, and philosophy.
         </p>
       </div>
       <div className="pt-4 flex gap-4">
@@ -62,7 +59,7 @@ export default function About() {
           <Button
             as={Link}
             href="mailto:amkhrjee@gmail.com"
-            color="secondary"
+            color="default"
             startContent={<LuMail />}
             variant="shadow"
           >
