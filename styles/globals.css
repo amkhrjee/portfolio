@@ -1,6 +1,9 @@
+@import "computer-modern/cmu-sans-serif.css";
+@import "computer-modern/cmu-serif.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
     :root {

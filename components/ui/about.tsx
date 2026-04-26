@@ -3,13 +3,7 @@ import { Image } from "@heroui/image";
 import { Link } from "@heroui/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
-import {
-  LuClipboardList,
-  LuFile,
-  LuMail,
-  LuMapPin,
-  LuSparkles,
-} from "react-icons/lu";
+import { LuMail, LuMapPin, LuSparkles } from "react-icons/lu";
 
 import { FaGoodreadsG } from "react-icons/fa";
 
@@ -42,7 +36,13 @@ export default function About() {
           <Link underline="hover" href="https://saketlab.in/">
             Prof. Saket Choudhary
           </Link>
-          . I completed my bachelor's in computer science and engineering at{" "}
+          . My research focuses on analyzing and improving pipelines for
+          single-cell gene expression data. I also worked on building a{" "}
+          <Link underline="hover" href="https://seqout.org">
+            search engine
+          </Link>{" "}
+          for sequence datasets. I completed my bachelor's in computer science
+          and engineering at{" "}
           <Link underline="hover" href="https://www.tezu.ernet.in/">
             Tezpur University
           </Link>
@@ -50,8 +50,9 @@ export default function About() {
         </p>
         <br />
         <p>
-          Outside the lab, I write code for fun, hike, and read across science
-          fiction, history, and philosophy.
+          Outside the lab, you’ll usually find me hiking, reading, or subjecting
+          my colleagues to a stream of facts about my latest hobby or obsession.
+          I enjoy talking about movies, video games, and computers.
         </p>
       </div>
       <div className="pt-4 flex gap-4">
@@ -61,7 +62,6 @@ export default function About() {
             href="mailto:amkhrjee@gmail.com"
             color="default"
             startContent={<LuMail />}
-            variant="shadow"
           >
             Email me
           </Button>
@@ -69,7 +69,6 @@ export default function About() {
         <Button
           as={Link}
           className="w-min"
-          variant="shadow"
           color="primary"
           target="_blank"
           href={"https://ai-aniruddha.streamlit.app/"}
@@ -80,25 +79,23 @@ export default function About() {
       </div>
 
       <div className="pt-4">
-        <br />
-        <div className="flex flex-row gap-2 justify-start">
+        <p>I'm available to connect via the following channels:</p>
+        <div className="pt-4 flex flex-row gap-2 justify-start">
           <Button
             as={Link}
             href="https://www.linkedin.com/in/amkhrjee/"
-            isIconOnly
             size="lg"
             variant="bordered"
           >
-            <FaLinkedinIn />
+            <FaLinkedinIn /> LinkedIn
           </Button>
           <Button
             as={Link}
             href="https://github.com/amkhrjee"
-            isIconOnly
             size="lg"
             variant="bordered"
           >
-            <FaGithub />
+            <FaGithub /> GitHub
           </Button>
           <Button
             as={Link}
@@ -120,31 +117,30 @@ export default function About() {
           </Button>
         </div>
         <br />
-        <p>
-          I maintain a blog and resources page where I sporadically post things
-          that I find interesting.
-        </p>
+        {/* <p>
+          My writings can be found at{" "}
+          <Link underline="hover" href="/writings">
+            /writings
+          </Link>
+          .
+        </p> */}
         <br />
-
-        <div className="flex flex-row gap-2 justify-start">
-          <Button
-            as={Link}
-            href="https://blog.amkhrjee.in"
-            size="lg"
-            startContent={<LuFile />}
-            variant="faded"
-          >
-            Blog
-          </Button>
-          <Button
-            as={Link}
-            href="https://resources.amkhrjee.in/"
-            size="lg"
-            startContent={<LuClipboardList />}
-            variant="faded"
-          >
-            Resources
-          </Button>
+        <div className="text-default-600">
+          <p>
+            “All we have to decide is what to do with the time that is given to
+            us.”
+          </p>
+          <p className="text-right">
+            -{" "}
+            <Link
+              style={{ color: "inherit" }}
+              target="_blank"
+              underline="hover"
+              href="https://www.youtube.com/watch?v=hdAN0o3oqB8"
+            >
+              Gandalf to Frodo at the mines of Moria
+            </Link>
+          </p>
         </div>
       </div>
     </main>

@@ -1,3 +1,4 @@
+// @ts-ignore
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 
@@ -5,12 +6,6 @@ import Providers from "./providers";
 
 import Navbar from "@/components/navbar";
 import { siteConfig } from "@/config/site";
-import { Source_Sans_3 } from "next/font/google";
-
-const sourceSans3 = Source_Sans_3({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amkhrjee.in"),
@@ -24,22 +19,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Aniruddha Mukherjee", url: "https://amkhrjee.in" }],
   creator: "Aniruddha Mukherjee",
   publisher: "Aniruddha Mukherjee",
-  // openGraph: {
-  //   type: "website",
-  //   locale: "en_US",
-  //   url: "https://amkhrjee.in",
-  //   title: siteConfig.name,
-  //   description: siteConfig.description,
-  //   siteName: siteConfig.name,
-  //   images: [
-  //     {
-  //       url: "/og-image.jpg",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: siteConfig.name,
-  //     },
-  //   ],
-  // },
+
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -80,7 +60,8 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14 ${sourceSans3.className}`}
+        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
+        style={{ fontFamily: "CMU Sans Serif" }}
       >
         <Providers
           themeProps={{
