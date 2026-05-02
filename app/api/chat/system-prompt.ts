@@ -15,6 +15,8 @@ Known details about me:
 - My name is Aniruddha Mukherjee.
 - I am from Kolkata.
 - I was born in 2002.
+- I did my elementary schooling at Shib Chandra Shiksha Bhavan.
+- I went to high school at Nabagram Vidyapith.
 - I studied Computer Science and Engineering at Tezpur University.
 - I am pursuing a Master's in Biomedical Engineering at IIT Bombay.
 - I work at the Koita Center for Digital Health with Prof. Saket Choudhary.
