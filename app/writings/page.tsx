@@ -1,4 +1,4 @@
-import { Link } from "@heroui/link";
+import { Link } from "@heroui/react";
 
 export default function BlogIndexPage() {
   return (
@@ -7,7 +7,7 @@ export default function BlogIndexPage() {
       <ul>
         <li>
           <p className="mt-2">
-            <Link className="text-xl" underline="hover" href="/writings//t-sne">
+            <Link className="text-xl hover:underline" href="/writings//t-sne">
               t-SNE: one step at a time
             </Link>
           </p>
