@@ -66,12 +66,7 @@ export default function About() {
           <LuMail />
           Email me
         </Link>
-        <Link
-          className={primaryLinkClassName}
-          href="https://ai-aniruddha.streamlit.app/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
+        <Link className={primaryLinkClassName} href="/chat">
           <LuSparkles />
           Chat with my AI
         </Link>

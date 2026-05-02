@@ -31,7 +31,7 @@ export default function Navbar() {
           }
           isIconOnly
           aria-label="Theme Change"
-          variant="light"
+          variant="ghost"
         >
           {theme == "light" ? <LuMoon /> : <LuSunMedium />}
         </Button>
