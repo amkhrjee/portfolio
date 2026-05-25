@@ -13,7 +13,7 @@ export default function Home() {
       link: "https://fontonic.amkhrjee.in",
       title: "Fontonic",
       shortDescription:
-        "Browser extension with 12,000+ daily active users. Written in TypeScript.",
+        "Browser extension with 20,000+ daily active users. Written in TypeScript.",
     },
     {
       link: "https://github.com/amkhrjee/tinypy",
