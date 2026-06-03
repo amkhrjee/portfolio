@@ -70,6 +70,7 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
         style={{ fontFamily: "CMU Sans Serif" }}
+        suppressHydrationWarning
       >
         <Providers
           themeProps={{

@@ -43,12 +43,8 @@ export default function About() {
             Prof. Saket Choudhary
           </Link>
           . My research focuses on analyzing and improving pipelines for
-          single-cell gene expression data. I also worked on building a{" "}
-          <Link className="hover:underline" href="https://seqout.org">
-            search engine
-          </Link>{" "}
-          for sequence datasets. I completed my bachelor's in computer science
-          and engineering at{" "}
+          single-cell gene expression data. I completed my bachelor's in
+          computer science and engineering at{" "}
           <Link className="hover:underline" href="https://www.tezu.ernet.in/">
             Tezpur University
           </Link>
