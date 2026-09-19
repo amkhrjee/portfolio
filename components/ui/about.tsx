@@ -54,7 +54,7 @@ export default function About() {
           I enjoy talking about books, movies, video games, and computers.
         </p>
       </div>
-      <div className="pt-4 flex gap-4">
+      <div className="mt-4 flex gap-4">
         <Button variant="primary">
           {/* <Link href="mailto:amkhrjee@gmail.com"> */}
           <LuMail />

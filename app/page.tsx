@@ -23,7 +23,7 @@ export default function Home() {
         "Search, retrieval, and metadata harmonisation for public sequencing datasets.",
     },
     {
-      link: "https://fontonic.amkhrjee.in",
+      link: "https://github.com/amkhrjee/fontonic",
       title: "Fontonic",
       shortDescription:
         "Browser extension with 20,000+ daily active users. Written in TypeScript.",
