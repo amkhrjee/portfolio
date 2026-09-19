@@ -1,5 +1,8 @@
 "use client";
 import About from "@/components/ui/about";
+import ExperienceTimeline, {
+  type TimelineEntry,
+} from "@/components/ui/experience-timeline";
 import ImageStackGallery from "@/components/ui/image-stack-gallery";
 import ProjectTablet from "@/components/ui/project-tablet";
 import { Card, Link, Tabs } from "@heroui/react";
@@ -83,6 +86,31 @@ export default function Home() {
     },
   ];
 
+  const experience: TimelineEntry[] = [
+    {
+      period: "2025-Present",
+      title: "Graduate Researcher",
+      organisation:
+        "Koita Center for Digital Health, Indian Institute of Technology Bombay",
+      description: "",
+    },
+    {
+      period: "2025",
+      title: "Research Intern",
+      organisation:
+        "Department of Computer Science & Engineering, Indian Institute of Technology Patna",
+      description:
+        "Worked at the Metaverse Lab on implementing RL algorithms for an ongoing research paper.",
+    },
+    {
+      period: "Earlier",
+      title: "Full Stack Engineering Intern",
+      organisation: "Foodable",
+      description:
+        "Worked on the UI and backend at a Delhi-based startup during my final year of high school.",
+    },
+  ];
+
   return (
     <div className="flex flex-col md:flex-row gap-4">
       <About />
@@ -129,7 +157,7 @@ export default function Home() {
                 <Card.Content>
                   <p>
                     I teach MATLAB through mathematical modeling to master’s and
-                    PhD students as part of BB709, under{" "}
+                    PhD students as part of BB709, with{" "}
                     <Link href="https://www.bio.iitb.ac.in/people/faculty/agrawal-dk/">
                       Prof. Deepak Agrawal
                     </Link>
@@ -198,6 +226,9 @@ export default function Home() {
                 </Card.Content>
               </Card>
             </div>
+          </Tabs.Panel>
+          <Tabs.Panel id="experience">
+            <ExperienceTimeline entries={experience} />
           </Tabs.Panel>
         </Tabs>
       </div>

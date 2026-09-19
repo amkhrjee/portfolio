@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LuMail, LuMapPin, LuSparkles } from "react-icons/lu";
+import { LuMail, LuMapPin } from "react-icons/lu";
 
 import { Button, Link } from "@heroui/react";
 import { FaGithub } from "react-icons/fa";
@@ -65,10 +65,10 @@ export default function About() {
           <FaGithub />
           GitHub
         </Button>
-        <Button variant="tertiary">
+        {/* <Button variant="tertiary">
           <LuSparkles />
           Chat with my AI
-        </Button>
+        </Button> */}
         {/* <Link href="/chat">
         </Link> */}
       </div>
