@@ -1,16 +1,8 @@
 import Image from "next/image";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { LuMail, LuMapPin, LuSparkles } from "react-icons/lu";
 
-import { Link } from "@heroui/react";
-
-const baseLinkClassName =
-  "inline-flex items-center justify-center gap-2 rounded-md border border-default px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-default-100";
-const primaryLinkClassName =
-  "inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background transition-colors hover:opacity-90";
-const iconLinkClassName =
-  "inline-flex h-11 w-11 items-center justify-center rounded-md border border-default text-foreground transition-colors hover:bg-default-100";
+import { Button, Link } from "@heroui/react";
+import { FaGithub } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -37,16 +29,21 @@ export default function About() {
           I am a master's student at{" "}
           <Link className="hover:underline" href="https://www.iitb.ac.in/">
             IIT Bombay
+            <Link.Icon />
           </Link>
           , working at the intersection of computer science and biology with{" "}
           <Link className="hover:underline" href="https://saketlab.in/">
             Prof. Saket Choudhary
+            <Link.Icon />
           </Link>
-          . My research focuses on analyzing and improving pipelines for
-          single-cell gene expression data. I completed my bachelor's in
-          computer science and engineering at{" "}
+          . My research focuses on developing and improving computational
+          pipelines for single-cell gene expression data, along with building
+          tools that simplify and accelerate the work of computational
+          biologists. I completed my bachelor's in computer science and
+          engineering at{" "}
           <Link className="hover:underline" href="https://www.tezu.ernet.in/">
             Tezpur University
+            <Link.Icon />
           </Link>
           .
         </p>
@@ -54,60 +51,52 @@ export default function About() {
         <p>
           Outside the lab, you’ll usually find me hiking, reading, or subjecting
           my colleagues to a stream of facts about my latest hobby or obsession.
-          I enjoy talking about movies, video games, and computers.
+          I enjoy talking about books, movies, video games, and computers.
         </p>
       </div>
       <div className="pt-4 flex gap-4">
-        <Link href="mailto:amkhrjee@gmail.com" className={baseLinkClassName}>
+        <Button variant="primary">
+          {/* <Link href="mailto:amkhrjee@gmail.com"> */}
           <LuMail />
           Email me
-        </Link>
-        <Link className={primaryLinkClassName} href="/chat">
+          {/* </Link> */}
+        </Button>
+        <Button variant="tertiary">
+          <FaGithub />
+          GitHub
+        </Button>
+        <Button variant="tertiary">
           <LuSparkles />
           Chat with my AI
-        </Link>
+        </Button>
+        {/* <Link href="/chat">
+        </Link> */}
       </div>
 
       <div className="pt-4">
-        <p>I'm available to connect via the following channels:</p>
-        <div className="pt-4 flex flex-row gap-2 justify-start">
+        <p>
+          I'm available to connect via{" "}
           <Link
-            className={baseLinkClassName}
             href="https://www.linkedin.com/in/amkhrjee/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <FaLinkedinIn />
             LinkedIn
-          </Link>
-          <Link
-            className={baseLinkClassName}
-            href="https://github.com/amkhrjee"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FaGithub />
-            GitHub
-          </Link>
+            <Link.Icon />
+          </Link>{" "}
+          and{" "}
           <Link
             aria-label="X / Twitter"
             href="https://x.com/amkhrjee"
             rel="noopener noreferrer"
             target="_blank"
-            className={baseLinkClassName}
           >
-            <FaXTwitter /> Twitter/X
+            Twitter/X
+            <Link.Icon />
           </Link>
-          {/* <Link
-            aria-label="Goodreads"
-            className={iconLinkClassName}
-            href="https://goodreads.com/amkhrjee"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <FaGoodreadsG />
-          </Link> */}
-        </div>
+          .
+        </p>
+
         <br />
         {/* <p>
           My writings can be found at{" "}
@@ -118,7 +107,7 @@ export default function About() {
         </p> */}
         <br />
         <div className="text-default-600">
-          <p>
+          <p className="font-serif italic">
             “All we have to decide is what to do with the time that is given to
             us.”
           </p>
