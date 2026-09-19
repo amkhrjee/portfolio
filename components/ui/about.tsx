@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LuMail, LuMapPin } from "react-icons/lu";
+import { LuFileText, LuMail, LuMapPin } from "react-icons/lu";
 
 import { Button, Link } from "@heroui/react";
 import { FaGithub } from "react-icons/fa";
@@ -31,9 +31,9 @@ export default function About() {
             IIT Bombay
             <Link.Icon />
           </Link>
-          , working at the intersection of computer science and biology with{" "}
+          , working at the intersection of computer science and biology at{" "}
           <Link className="hover:underline" href="https://saketlab.in/">
-            Prof. Saket Choudhary
+            Saket Lab
             <Link.Icon />
           </Link>
           . My research focuses on developing and improving computational
@@ -71,6 +71,15 @@ export default function About() {
         >
           <FaGithub />
           GitHub
+        </Button>
+        <Button
+          variant="tertiary"
+          onClick={() =>
+            (window.location.href = "https://github.com/amkhrjee/")
+          }
+        >
+          <LuFileText />
+          CV
         </Button>
       </div>
 

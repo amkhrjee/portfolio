@@ -20,7 +20,7 @@ export default function Home() {
       link: "https://seqout.org",
       title: "Seqout",
       shortDescription:
-        "Search, retrieval, and metadata harmonisation for public sequencing datasets.",
+        "Search engine (and more) for public genomic data. Used by researchers across the globe.",
     },
     {
       link: "https://github.com/amkhrjee/fontonic",
