@@ -6,10 +6,6 @@ import Providers from "./providers";
 
 import Navbar from "@/components/navbar";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { Geist } from "next/font/google";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amkhrjee.in"),
@@ -61,15 +57,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      suppressHydrationWarning
-      lang="en"
-      className={cn("font-sans", geist.variable)}
-    >
+    <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
-        style={{ fontFamily: "CMU Sans Serif" }}
         suppressHydrationWarning
       >
         <Providers
