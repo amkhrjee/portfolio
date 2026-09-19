@@ -4,7 +4,6 @@ import { Metadata, Viewport } from "next";
 
 import Providers from "./providers";
 
-import Navbar from "@/components/navbar";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -69,8 +68,8 @@ export default function RootLayout({
             enableSystem: true,
           }}
         >
-          <Navbar />
-          <div className="relative z-10">{children}</div>
+          {/* <Navbar /> */}
+          <div className="relative z-10 mt-8">{children}</div>
         </Providers>
       </body>
     </html>

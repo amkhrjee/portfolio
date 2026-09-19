@@ -19,7 +19,7 @@ export default function ProjectTablet({
     <Link className="block h-full" href={link} target="_blank">
       <Card className="h-full transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md">
         <Card.Content>
-          <strong>{title}.</strong> {shortDescription}
+          <strong>{title}</strong> {shortDescription}
         </Card.Content>
       </Card>
     </Link>

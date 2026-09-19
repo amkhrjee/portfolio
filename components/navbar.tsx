@@ -10,9 +10,9 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="w-full flex pt-4 justify-between">
+    <div className="w-full flex pt-4 justify-between items-center">
       <Link className="font-semibold text-xl font-mono" href="/">
-        অনিরুদ্ধ
+        AM
       </Link>
       <div className="flex gap-2">
         <Button
