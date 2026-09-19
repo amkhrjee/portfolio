@@ -29,16 +29,22 @@ export default function Home() {
         "Browser extension with 20,000+ daily active users. Written in TypeScript.",
     },
     {
+      link: "https://github.com/amkhrjee/ocwd",
+      title: "ocwd",
+      shortDescription:
+        "Scraper and bulk-downloader for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
+    },
+    {
       link: "https://github.com/amkhrjee/tinypy",
       title: "tinypy",
       shortDescription:
         "Linear algebra library written from scratch in Python. Supports advanced matrix operations.",
     },
     {
-      link: "/",
-      title: "Lipika",
+      link: "https://github.com/amkhrjee/wp",
+      title: "wp",
       shortDescription:
-        "GPT-2 based LLM developed from scratch and pre-trained in Assamese at Tezpur University.",
+        "Parser and scraper for documents returned by the Wikipedia API, written in Rust.",
     },
     {
       link: "https://github.com/amkhrjee/pathfinder",
@@ -47,16 +53,10 @@ export default function Home() {
         "AI path-finding algorithms visualiser written in Go with Raylib. Cross-OS desktop application.",
     },
     {
-      link: "https://github.com/amkhrjee/wp",
-      title: "wp",
+      link: "/",
+      title: "Lipika",
       shortDescription:
-        "Parser and scraper for Wikipedia written in Rust. Heavily utilizes multi-threading.",
-    },
-    {
-      link: "https://github.com/amkhrjee/ocwd",
-      title: "ocwd",
-      shortDescription:
-        "Scraper and bulk-downloader for MIT courses. Written in shell scripts. 900+ downloads on PSGallery.",
+        "GPT-2 based LLM developed from scratch and pre-trained in Assamese at Tezpur University.",
     },
   ];
 
@@ -175,7 +175,7 @@ export default function Home() {
                 </Card.Header>
                 <Card.Content>
                   <p>
-                    I will speaking about Seqout at{" "}
+                    I will be speaking about Seqout at{" "}
                     <Link href="https://fossunited.org/indiafoss/2026">
                       IndiaFOSS 2026
                     </Link>{" "}
@@ -219,7 +219,7 @@ export default function Home() {
                       <Link href="https://www.math.iitb.ac.in/~amp/index.html">
                         applied mathematics workshop
                       </Link>{" "}
-                      organised by the department of mathematics at IIT Bombay
+                      organised by the Department of Mathematics at IIT Bombay
                       on 26th August.
                     </p>
                   </div>

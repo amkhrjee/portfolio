@@ -55,22 +55,23 @@ export default function About() {
         </p>
       </div>
       <div className="mt-4 flex gap-4">
-        <Button variant="primary">
-          {/* <Link href="mailto:amkhrjee@gmail.com"> */}
+        <Button
+          variant="primary"
+          onClick={() => (window.location.href = "mailto:amkhrjee@gmail.com")}
+        >
           <LuMail />
           Email me
           {/* </Link> */}
         </Button>
-        <Button variant="tertiary">
+        <Button
+          variant="tertiary"
+          onClick={() =>
+            (window.location.href = "https://github.com/amkhrjee/")
+          }
+        >
           <FaGithub />
           GitHub
         </Button>
-        {/* <Button variant="tertiary">
-          <LuSparkles />
-          Chat with my AI
-        </Button> */}
-        {/* <Link href="/chat">
-        </Link> */}
       </div>
 
       <div className="pt-4">
