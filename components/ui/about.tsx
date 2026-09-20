@@ -74,9 +74,7 @@ export default function About() {
         </Button>
         <Button
           variant="tertiary"
-          onClick={() =>
-            (window.location.href = "https://github.com/amkhrjee/")
-          }
+          onClick={() => (window.location.href = "/CV_Aniruddha.pdf")}
         >
           <LuFileText />
           CV

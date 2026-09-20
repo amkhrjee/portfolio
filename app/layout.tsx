@@ -69,7 +69,7 @@ export default function RootLayout({
           }}
         >
           {/* <Navbar /> */}
-          <div className="relative z-10 mt-8">{children}</div>
+          <div className="relative z-10 mx-auto mt-8 max-w-300">{children}</div>
         </Providers>
       </body>
     </html>
