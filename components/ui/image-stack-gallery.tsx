@@ -79,13 +79,13 @@ export default function ImageStackGallery({
 
       <Dialog onOpenChange={setOpen} open={open}>
         <DialogContent
-          className="w-[min(100%-1rem,64rem)] max-w-none gap-0 overflow-hidden bg-black p-0 text-white ring-white/15 sm:max-w-none"
+          className="w-[min(100%-1rem,64rem)] max-w-none gap-0 overflow-hidden bg-popover p-0 text-popover-foreground sm:max-w-none"
           showCloseButton={false}
         >
           <DialogTitle className="sr-only">Photo gallery</DialogTitle>
           <Button
             aria-label="Close gallery"
-            className="absolute top-3 right-3 z-20 bg-black/45 text-white hover:bg-black/70 hover:text-white"
+            className="absolute top-3 right-3 z-20 bg-background/80 text-foreground shadow-sm hover:bg-background hover:text-foreground"
             onClick={() => setOpen(false)}
             size="icon"
             type="button"
@@ -94,7 +94,7 @@ export default function ImageStackGallery({
             <X />
           </Button>
 
-          <div className="relative">
+          <div className="relative bg-muted">
             <div
               aria-label="Photo gallery. Swipe left or right to browse images."
               className="flex max-h-[80vh] snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -121,7 +121,7 @@ export default function ImageStackGallery({
               <>
                 <Button
                   aria-label="Previous image"
-                  className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/45 text-white hover:bg-black/70 hover:text-white"
+                  className="absolute top-1/2 left-3 -translate-y-1/2 bg-background/80 text-foreground shadow-sm hover:bg-background hover:text-foreground"
                   onClick={() => showImage(activeIndex - 1)}
                   size="icon"
                   type="button"
@@ -131,7 +131,7 @@ export default function ImageStackGallery({
                 </Button>
                 <Button
                   aria-label="Next image"
-                  className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/45 text-white hover:bg-black/70 hover:text-white"
+                  className="absolute top-1/2 right-3 -translate-y-1/2 bg-background/80 text-foreground shadow-sm hover:bg-background hover:text-foreground"
                   onClick={() => showImage(activeIndex + 1)}
                   size="icon"
                   type="button"
@@ -143,10 +143,10 @@ export default function ImageStackGallery({
             )}
           </div>
 
-          <div className="flex min-h-11 items-center justify-center bg-black/85 px-12 text-center text-sm text-white/85">
+          <div className="flex min-h-11 items-center justify-center bg-muted px-12 text-center text-sm text-muted-foreground">
             {images[activeIndex].caption || images[activeIndex].alt}
             {images.length > 1 && (
-              <span className="ml-2 text-white/55">
+              <span className="ml-2 text-muted-foreground/70">
                 {activeIndex + 1} / {images.length}
               </span>
             )}
