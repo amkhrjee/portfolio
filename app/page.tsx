@@ -78,6 +78,24 @@ export default function Home() {
     },
   ];
 
+  const INDIAFOSS_IMAGES = [
+    {
+      src: "/IndiaFOSS/Photo-01.webp",
+      alt: "Me giving talk.",
+      caption: "Me giving talk.",
+    },
+    {
+      src: "/IndiaFOSS/Photo-02.webp",
+      alt: "Me giving talk.",
+      caption: "Me giving talk.",
+    },
+    {
+      src: "/IndiaFOSS/Photo-03.webp",
+      alt: "Me giving talk.",
+      caption: "Me giving talk.",
+    },
+  ];
+
   const MRW_IMAGES = [
     {
       src: "/MRW/Photo.webp",
@@ -174,19 +192,20 @@ export default function Home() {
                   Speaking at IndiaFOSS 2026
                 </Card.Header>
                 <Card.Content>
-                  <p>
-                    I will be speaking about Seqout at{" "}
-                    <Link href="https://fossunited.org/indiafoss/2026">
-                      IndiaFOSS 2026
-                    </Link>{" "}
-                    in Bengaluru on 27th September.
-                    <br />
-                    Event will be live-streamed via the{" "}
-                    <Link href="https://www.youtube.com/@FOSSUnited">
-                      FOSS United YouTube channel
-                    </Link>
-                    .
-                  </p>
+                  <div className="flex gap-4 items-center justify-start">
+                    <ImageStackGallery images={INDIAFOSS_IMAGES} />
+                    <p>
+                      I gave a talk about Seqout at{" "}
+                      <Link href="https://fossunited.org/indiafoss/2026">
+                        IndiaFOSS 2026
+                      </Link>{" "}
+                      in Bengaluru on 27th September.
+                      <br />
+                      <Link href="https://www.youtube.com/live/bXMjp1JOzPQ?si=Itoz0v2QFZT0ZKhn&t=3838">
+                        Watch on YouTube <Link.Icon />
+                      </Link>
+                    </p>
+                  </div>
                 </Card.Content>
               </Card>
               <Card>
