@@ -195,7 +195,7 @@ export default function Home() {
                   <div className="flex gap-4 items-center justify-start">
                     <ImageStackGallery images={INDIAFOSS_IMAGES} />
                     <p>
-                      I gave a talk about Seqout at{" "}
+                      I gave a talk at{" "}
                       <Link href="https://fossunited.org/indiafoss/2026">
                         IndiaFOSS 2026
                       </Link>{" "}
