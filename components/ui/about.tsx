@@ -1,10 +1,58 @@
+"use client";
+
 import Image from "next/image";
-import { LuFileText, LuMail, LuMapPin } from "react-icons/lu";
+import { useEffect, useState } from "react";
+import {
+  LuFileText,
+  LuMail,
+  LuMapPin,
+  LuMoon,
+  LuSun,
+  LuSunrise,
+  LuSunset,
+} from "react-icons/lu";
 
 import { Button, Link } from "@heroui/react";
 import { FaGithub } from "react-icons/fa";
 
+const istTimeFormatter = new Intl.DateTimeFormat("en-IN", {
+  timeZone: "Asia/Kolkata",
+  hour: "numeric",
+  minute: "2-digit",
+  hour12: true,
+  timeZoneName: "short",
+});
+
+const istHourFormatter = new Intl.DateTimeFormat("en-IN", {
+  timeZone: "Asia/Kolkata",
+  hour: "numeric",
+  hourCycle: "h23",
+});
+
+function getTimeOfDayIcon(date: Date | null) {
+  const hour = date ? Number(istHourFormatter.format(date)) : 12;
+
+  if (hour >= 5 && hour < 9) return LuSunrise;
+  if (hour >= 17 && hour < 20) return LuSunset;
+  if (hour >= 9 && hour < 17) return LuSun;
+
+  return LuMoon;
+}
+
 export default function About() {
+  const [currentTime, setCurrentTime] = useState<Date | null>(null);
+
+  useEffect(() => {
+    const updateTime = () => setCurrentTime(new Date());
+
+    updateTime();
+    const intervalId = window.setInterval(updateTime, 60_000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const TimeOfDayIcon = getTimeOfDayIcon(currentTime);
+
   return (
     <main className="flex-1">
       <div className="pt-4 flex flex-row gap-4 items-center ">
@@ -20,7 +68,10 @@ export default function About() {
           <p className="text-2xl font-semibold">I'm Aniruddha.</p>
           <div className="flex gap-1 items-center text-sm">
             <LuMapPin />
-            Mumbai & Kolkata, India
+            Mumbai, India (<TimeOfDayIcon aria-hidden="true" />
+            <time aria-label="Current time in India" className="tabular-nums">
+              {currentTime ? istTimeFormatter.format(currentTime) : "Loading…"})
+            </time>
           </div>
         </div>
       </div>
