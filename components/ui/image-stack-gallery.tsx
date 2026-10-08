@@ -5,6 +5,7 @@ import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import Image from "next/image";
 
 export type GalleryImage = {
   src: string;
@@ -60,7 +61,7 @@ export default function ImageStackGallery({
         type="button"
       >
         {images.slice(0, 3).map((image, index) => (
-          <img
+          <Image
             alt=""
             aria-hidden="true"
             className="absolute top-1/2 aspect-square w-14 -translate-y-1/2 rounded-2xl border-2 border-background object-cover shadow-sm transition-transform duration-200 group-hover:-translate-y-[55%]"
