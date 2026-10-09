@@ -65,16 +65,22 @@ export default function Home() {
       src: "/GIC/Photo-01.webp",
       alt: "Explaining my poster to a visitor",
       caption: "Explaining my poster to a visitor",
+      width: 3072,
+      height: 4096,
     },
     {
       src: "/GIC/Photo-02.webp",
       alt: "Me with my poster",
       caption: "",
+      width: 963,
+      height: 1280,
     },
     {
       src: "/GIC/Photo-03.webp",
       alt: "Explaining my poster to a visitor",
       caption: "Explaining my poster to a visitor",
+      width: 3072,
+      height: 4096,
     },
   ];
 
@@ -83,16 +89,22 @@ export default function Home() {
       src: "/IndiaFOSS/Photo-01.webp",
       alt: "Me giving talk.",
       caption: "Me giving talk.",
+      width: 4096,
+      height: 3072,
     },
     {
       src: "/IndiaFOSS/Photo-02.webp",
       alt: "Me giving talk.",
       caption: "Me giving talk.",
+      width: 3072,
+      height: 4096,
     },
     {
       src: "/IndiaFOSS/Photo-03.webp",
       alt: "Me giving talk.",
       caption: "Me giving talk.",
+      width: 3072,
+      height: 4096,
     },
   ];
 
@@ -101,6 +113,8 @@ export default function Home() {
       src: "/MRW/Photo.webp",
       alt: "My poster",
       caption: "My poster",
+      width: 3000,
+      height: 3000,
     },
   ];
 
