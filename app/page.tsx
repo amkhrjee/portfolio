@@ -6,6 +6,7 @@ import ExperienceTimeline, {
 import ImageStackGallery from "@/components/ui/image-stack-gallery";
 import ProjectTablet from "@/components/ui/project-tablet";
 import { Card, Link, Tabs } from "@heroui/react";
+import { useEffect, useState } from "react";
 import { LuAppWindowMac, LuBriefcaseBusiness, LuFlower } from "react-icons/lu";
 
 type Project = {
@@ -15,6 +16,16 @@ type Project = {
 };
 
 export default function Home() {
+  const [tab, setTab] = useState("projects");
+  useEffect(() => {
+    const sync = () => {
+      const h = location.hash.slice(1);
+      if (["projects", "activities", "experience"].includes(h)) setTab(h);
+    };
+    sync();
+    addEventListener("hashchange", sync);
+    return () => removeEventListener("hashchange", sync);
+  }, []);
   const projects: Project[] = [
     {
       link: "https://seqout.org",
@@ -147,7 +158,14 @@ export default function Home() {
     <div className="flex flex-col md:flex-row gap-4">
       <About />
       <div className="flex-1">
-        <Tabs defaultSelectedKey="projects" variant="secondary">
+        <Tabs
+          selectedKey={tab}
+          onSelectionChange={(k) => {
+            setTab(String(k));
+            history.replaceState(null, "", `#${k}`);
+          }}
+          variant="secondary"
+        >
           <Tabs.ListContainer>
             <Tabs.List aria-label="Portfolio sections">
               <Tabs.Tab id="projects">
