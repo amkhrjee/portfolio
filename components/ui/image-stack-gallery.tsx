@@ -93,10 +93,12 @@ export default function ImageStackGallery({
             alt=""
             aria-hidden="true"
             className="absolute top-1/2 aspect-square w-14 -translate-y-1/2 rounded-2xl border-2 border-background object-cover shadow-sm transition-transform duration-200 group-hover:-translate-y-[55%]"
+            height={56}
             key={image.src}
             loading="lazy"
             src={image.src}
             style={{ left: `${index * 25}px`, zIndex: images.length - index }}
+            width={56}
           />
         ))}
         {images.length > 3 && (

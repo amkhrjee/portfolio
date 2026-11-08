@@ -12,7 +12,7 @@ import {
   LuSunset,
 } from "react-icons/lu";
 
-import { Button, Link } from "@heroui/react";
+import { Button, Link, Tooltip } from "@heroui/react";
 import { FaGithub } from "react-icons/fa";
 
 const istTimeFormatter = new Intl.DateTimeFormat("en-IN", {
@@ -65,7 +65,20 @@ export default function About() {
         />
         <div className="flex flex-col gap-2">
           <p>Hey there,</p>
-          <p className="text-2xl font-semibold">I'm Aniruddha.</p>
+          <p className="text-2xl font-semibold">
+            I'm Aniruddha.{" "}
+            <Tooltip>
+              <Tooltip.Trigger>
+                <span className="text-sm font-light">(/ə.nɪˈrʊd̪ʱ/)</span>
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                <p>
+                  My name is a Sanskrit word <br />
+                  and is pronouced <em>uh-nee-roodh</em>{" "}
+                </p>
+              </Tooltip.Content>
+            </Tooltip>
+          </p>
           <div className="flex gap-1 items-center text-sm">
             <LuMapPin />
             Mumbai, India (<TimeOfDayIcon aria-hidden="true" />
@@ -153,7 +166,25 @@ export default function About() {
             Twitter/X
             <Link.Icon />
           </Link>
-          .
+          . I update what I am reading at{" "}
+          <Link
+            href="https://www.goodreads.com/amkhrjee"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Goodreads
+            <Link.Icon />
+          </Link>{" "}
+          . I used to maintain a{" "}
+          <Link
+            href="http://resources.amkhrjee.in/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            collection of resources
+            <Link.Icon />
+          </Link>{" "}
+          for learning various topics in computer science.
         </p>
 
         <br />
