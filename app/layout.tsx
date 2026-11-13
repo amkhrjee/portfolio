@@ -1,6 +1,9 @@
 // @ts-ignore
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
+import { Lato } from "next/font/google";
+
+const LatoSans = Lato({ weight: ["400", "700"] });
 
 import Providers from "./providers";
 
@@ -59,7 +62,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-        className={`min-h-screen bg-background font-sans antialiased px-4 md:px-14`}
+        className={`min-h-screen bg-background ${LatoSans.className} antialiased px-4 md:px-14`}
         suppressHydrationWarning
       >
         <Providers
