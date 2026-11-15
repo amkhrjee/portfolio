@@ -72,8 +72,8 @@ export default function About() {
                 <span className="text-sm font-light">(/ə.nɪˈrʊd̪ʱ/)</span>
               </Tooltip.Trigger>
               <Tooltip.Content>
-                <p>
-                  My name is a Sanskrit word <br />
+                <p className="text-center">
+                  My name is a sanskrit word <br />
                   and is pronouced <em>uh-nee-roodh</em>{" "}
                 </p>
               </Tooltip.Content>
