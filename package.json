@@ -87,5 +87,5 @@
   "overrides": {
     "react-syntax-highlighter": "15.0.0"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@11.28.12"
 }
