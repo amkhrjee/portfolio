@@ -221,7 +221,7 @@ export default function Home() {
               </Card>
               <Card>
                 <Card.Header className="font-semibold">
-                  Speaking at IndiaFOSS 2026
+                  Talk at IndiaFOSS 2026
                 </Card.Header>
                 <Card.Content>
                   <div className="flex gap-4 items-center justify-start">

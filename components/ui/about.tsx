@@ -12,7 +12,8 @@ import {
   LuSunset,
 } from "react-icons/lu";
 
-import { Button, Link, Tooltip } from "@heroui/react";
+import { Button } from "@heroui/react";
+import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
 const istTimeFormatter = new Intl.DateTimeFormat("en-IN", {
@@ -64,10 +65,9 @@ export default function About() {
           height={120}
         />
         <div className="flex flex-col gap-2">
-          <p>Hey there,</p>
           <p className="text-2xl font-semibold">
-            I'm Aniruddha.{" "}
-            <Tooltip>
+            Aniruddha Mukherjee
+            {/* <Tooltip>
               <Tooltip.Trigger>
                 <span className="text-sm font-light">(/ə.nɪˈrʊd̪ʱ/)</span>
               </Tooltip.Trigger>
@@ -77,8 +77,9 @@ export default function About() {
                   and is pronouced <em>uh-nee-roodh</em>{" "}
                 </p>
               </Tooltip.Content>
-            </Tooltip>
+            </Tooltip> */}
           </p>
+          <p>Master's student, IIT Bombay</p>
           <div className="flex gap-1 items-center text-sm">
             <LuMapPin />
             Mumbai, India (<TimeOfDayIcon aria-hidden="true" />
@@ -88,17 +89,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="pt-4">
+      <div className="pt-4 text-xl">
         <p>
-          I am a master's student at{" "}
-          <Link className="hover:underline" href="https://www.iitb.ac.in/">
-            IIT Bombay
-            <Link.Icon />
-          </Link>
-          , working at the intersection of computer science and biology at{" "}
-          <Link className="hover:underline" href="https://saketlab.in/">
+          I work at the intersection of computer science and biology at{" "}
+          <Link className="text-accent" href="https://saketlab.in/">
             Saket Lab
-            <Link.Icon />
           </Link>
           . My research focuses on developing and improving computational
           pipelines for single-cell gene expression data, along with building
@@ -107,7 +102,6 @@ export default function About() {
           engineering at{" "}
           <Link className="hover:underline" href="https://www.tezu.ernet.in/">
             Tezpur University
-            <Link.Icon />
           </Link>
           .
         </p>
@@ -146,45 +140,46 @@ export default function About() {
       </div>
 
       <div className="pt-4">
-        <p>
+        <p className="text-xl">
           I'm available to connect via{" "}
           <Link
+            className="text-accent"
             href="https://www.linkedin.com/in/amkhrjee/"
             rel="noopener noreferrer"
             target="_blank"
           >
             LinkedIn
-            <Link.Icon />
           </Link>{" "}
           and{" "}
           <Link
+            className="text-accent"
             aria-label="X / Twitter"
             href="https://x.com/amkhrjee"
             rel="noopener noreferrer"
             target="_blank"
           >
             Twitter/X
-            <Link.Icon />
           </Link>
-          . I update what I am reading at{" "}
+          .
+          {/* . I update what I am reading at{" "}
           <Link
+            className="text-accent"
             href="https://www.goodreads.com/amkhrjee"
             rel="noopener noreferrer"
             target="_blank"
           >
             Goodreads
-            <Link.Icon />
           </Link>{" "}
           . I used to maintain a{" "}
           <Link
+            className="text-accent"
             href="http://resources.amkhrjee.in/"
             rel="noopener noreferrer"
             target="_blank"
           >
             collection of resources
-            <Link.Icon />
           </Link>{" "}
-          for learning various topics in computer science.
+          for learning various topics in computer science. */}
         </p>
 
         <br />
@@ -197,14 +192,14 @@ export default function About() {
         </p> */}
         <br />
         <div className="text-default-600">
-          <p className="font-serif italic">
+          <p className="italic">
             “All we have to decide is what to do with the time that is given to
             us.”
           </p>
           <p className="text-right">
             -{" "}
             <Link
-              className="hover:underline"
+              className="text-accent"
               style={{ color: "inherit" }}
               target="_blank"
               rel="noopener noreferrer"

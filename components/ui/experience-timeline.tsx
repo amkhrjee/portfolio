@@ -42,7 +42,7 @@ export default function ExperienceTimeline({
             <p className="text-sm font-medium text-primary">
               {entry.organisation}
             </p>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+            <p className="mt-2  leading-6 text-muted-foreground">
               {entry.description}
             </p>
           </article>
